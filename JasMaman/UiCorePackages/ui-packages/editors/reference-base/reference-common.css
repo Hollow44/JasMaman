@@ -1,0 +1,91 @@
+﻿/* reference editor */
+
+.ref-multi-select {
+    cursor: pointer;
+    border: 0px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-left: 6px;
+    background-image: url(images/static/btnchoose.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -10000px;
+    background-color: #549C2F;
+}
+.ref-clear {
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-left: 2px;
+    background-image: url(images/static/btnclear.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #b9b9b9;
+    text-indent: -10000px;
+    cursor: pointer;
+}
+
+.ui-referencebox-multi.loading .ref-multi-select {
+	cursor: default;
+	background-image: url(images/static/loading-circle2.gif);
+}
+
+.ui-referencebox-multi.loading .ref-clear {
+	display: none;
+}
+
+.ref-loading {
+    padding-left: 20px;
+    background-image: url("images/static/loading-circle.gif");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-appearance: none;
+}
+
+.ref-multiselect-item-checkbox {
+    padding: 1px;
+}
+.ref-multiselect-item-label {
+    padding-left: 3px;
+}
+
+.ref-multiselect-sub-items-expander 
+{
+    cursor: pointer;
+    padding: 1px;
+}
+
+.ref-sub-items-container {
+    margin-left: 15px;
+}
+
+.ref-expanded {
+    display: block;
+}
+
+.ref-collapsed {
+    display: none;
+}
+
+.ref-multiselect-item-state-checked, .ref-multiselect-item-state-unchecked, .ref-multiselect-item-state-intermediate {
+    padding-left: 17px;
+    padding-right: 8px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: 1px center;
+    cursor: default;
+}
+
+.ref-multiselect-item-state-checked {
+    background-image: url("images/static/checkbox-checked.png")
+}
+
+.ref-multiselect-item-state-unchecked {
+    background-image: url("images/static/checkbox-unchecked.png");
+}
+
+.ref-multiselect-item-state-intermediate {
+    background-image: url("images/static/checkbox-partial.png");
+}
+/* end reference editor */

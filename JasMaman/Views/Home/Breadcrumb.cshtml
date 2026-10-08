@@ -1,0 +1,76 @@
+﻿@using Yoda.Application.Models;
+@using Yoda.Interfaces;
+@using Yoda.Interfaces.Menu.Tree;
+
+@model Yoda.Application.Models.Breadcrumb
+
+
+@{
+    if(Model == null) {
+        return;
+    }
+    
+
+    Yoda.Interfaces.Menu.Tree.MenuItem cur = Model.MenuItem;
+    List<Yoda.Interfaces.Menu.Tree.MenuItem> items = new List<Yoda.Interfaces.Menu.Tree.MenuItem>();
+
+    while (cur != null) {
+        items.Add(cur);
+        cur = cur.Parent;
+    }
+    foreach (var menuItem in items.ToArray()) {
+        if (!await menuItem.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext)) {
+            items.Remove(menuItem);
+        }
+    }
+
+    var initialModule = Model.RequestContext.AppEnv.ProjectList[Model.CurrentProject].RootMenu;
+}
+<ol class="breadcrumb m-0">  
+    @{
+        var routeLink = ((IHtmlHelper)Html).YodaRouteLink(initialModule.Module, initialModule.Menu, Html.T(BreadcrumbTexts.StartPage), null);
+        //var routeLink = ModuleMenuHelpers.YodaRouteLink((IHtmlHelper)Html, initialModule.Module, initialModule.Menu, Html.T(BreadcrumbTexts.StartPage), null);
+    }
+    <li class="breadcrumb-item">
+    @routeLink
+    </li>
+
+    @{
+        if(items.Count>0) {
+            items.Reverse();
+            items.RemoveAt(items.Count - 1);
+        }
+
+        foreach (var menuItem in items) {
+            if (menuItem.IsNotEmpty) {
+                if (!menuItem.ModuleMenu.NativeMenuLink.DontShowInBreadcrumb) {
+                    <li class="breadcrumb-item">
+                    @Html.YodaRouteLink(menuItem.ModuleMenu.ModuleName ?? menuItem.ModuleMenu.ModuleName, menuItem.ModuleMenu.NativeMenuLink.Name, menuItem.ModuleMenu.NativeMenuLink.GetLinkText(Model.RequestContext), menuItem.ModuleMenu.NativeMenuLink.RawQueryDefaultParams, null)
+                    </li>
+                }
+            } else {
+                Yoda.Interfaces.Menu.Tree.MenuItem firstActionItem = await menuItem.FindFirstChildAction(Model.RequestContext);
+                if (firstActionItem != null) {
+                    if (!firstActionItem.ModuleMenu.NativeMenuLink.DontShowInBreadcrumb) {
+                        <li class="breadcrumb-item">
+                            @Html.YodaRouteLink(firstActionItem.ModuleMenu.ModuleName ?? firstActionItem.ModuleMenu.ModuleName, firstActionItem.ModuleMenu.NativeMenuLink.Name, menuItem.ModuleMenu.NativeMenuLink.GetLinkText(Model.RequestContext), firstActionItem.ModuleMenu.NativeMenuLink.RawQueryDefaultParams, null)
+                        </li>
+                    }
+                }else{
+                    if (!menuItem.ModuleMenu.NativeMenuLink.DontShowInBreadcrumb) {
+                        <li class="breadcrumb-item active">
+                            @menuItem.ModuleMenu.NativeMenuLink.GetLinkText(Model.RequestContext)
+                        </li>
+                    }
+                }
+            }
+        }
+        if (Model.MenuItem != null && Model.MenuItem.ModuleMenu != null) {
+            if (!Model.MenuItem.ModuleMenu.NativeMenuLink.DontShowInBreadcrumb) {
+                <li class="breadcrumb-item active">
+                    @Model.MenuItem.ModuleMenu.NativeMenuLink.GetLinkText(Model.RequestContext)
+                </li>
+            }
+        }
+    }
+</ol>

@@ -1,0 +1,62 @@
+variables:
+  GIT_SSL_NO_VERIFY: "1"
+  GIT_SUBMODULE_STRATEGY: recursive
+
+.common:
+  buildBeforeScript: &buildBeforeScript
+    - update-ca-certificates
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: nexus.aq.servers.lan:8083/dotnet/sdk:6.0
+  tags:
+    - aqkol-dotnet-build
+  only:
+    refs:
+      - master
+  artifacts:
+    paths:
+      - deploy_pack/*
+  before_script: *buildBeforeScript
+  script:
+    # remove all developer localsettings
+    - rm -rf *.localsettings.json
+
+    - dotnet restore JasMaman --packages /nuget_packages --source https://nexus.aq.servers.lan:8443/repository/nuget-org-proxy-v3/index.json --source https://nexus.dc.servers.lan:8443/repository/nuget-org-proxy-v3/index.json --source https://nexus.aq.servers.lan:8443/repository/our-nuget-hosted/index.json --source https://nuget.servers.lan/nuget/ 
+    - dotnet build JasMaman --no-restore
+
+    - dotnet publish JasMaman/JasMaman.csproj -c Release --no-restore
+    
+    # prepare publish dir structure 
+    - mkdir deploy_pack/
+    
+    # WEB_APP
+    - mkdir deploy_pack/web
+    - mkdir deploy_pack/web/bin                     # bin directory
+    - mkdir deploy_pack/web/bin/net6.0
+    - mkdir deploy_pack/web/Plugins                 # plugins directory
+    - mkdir deploy_pack/web/wwwroot
+    - mkdir deploy_pack/web/Scripts
+    
+    - \cp -r JasMaman/bin/Release/net6.0/* deploy_pack/web/bin/net6.0
+    - \cp -r JasMaman/bin/Release/net6.0/publish/* deploy_pack/web/bin/net6.0
+    - \rm -rf deploy_pack/web/bin/net6.0/publish
+
+    
+      # copy other assets
+    - cp -r JasMaman/Views               deploy_pack/web
+    - cp -r JasMaman/Fonts               deploy_pack/web
+    - cp -r JasMaman/html-pages          deploy_pack/web
+    - cp -r JasMaman/Theme               deploy_pack/web
+    - cp -r JasMaman/UiCorePackages      deploy_pack/web
+    - cp -r JasMaman/db                  deploy_pack/web
+    - cp -r JasMaman/appsettings*json    deploy_pack/web
+    
+    - pushd deploy_pack/web
+    - rm -rf *.localsettings.json
+    - popd
+

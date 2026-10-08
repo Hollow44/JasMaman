@@ -1,0 +1,26 @@
+﻿{
+	require:["jquery.core"],
+	loadOnly: {
+		css: [
+			"block.css",
+			"collapsible-tables.css",
+			"data-role-edit.css",
+			"default.css",
+			"editors.css",
+			"fileUploader.css",
+
+			"layout.css",
+			"menu.css",
+			"pivot-table.css",
+			"projects-list-page.css",
+			"query-filter-builder.css",
+			"table.css",
+			"toolbar.css",
+			"user-module.css",
+			"Yoda.Controls.css",
+			"DataManagingStyles.css",
+			"jquery.ui.datetime.css",
+			"Site.css"			
+		],
+	}
+}

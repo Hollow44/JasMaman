@@ -1,0 +1,30 @@
+﻿.ol-choose-layer-panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-51%);
+    z-index: 1;
+    width: 150px;
+    background: #f9fafd;
+    border: 1px solid #e7ebf0;
+    border-radius: 0.25rem;
+    padding: .25rem 0;
+}
+
+.ol-choose-layer-item {
+    vertical-align: middle;
+    padding: 10px;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.ol-choose-layer-item.selected-item {
+    background-color: #727cf5;
+    cursor: default;
+    color: white;
+}
+
+.ol-choose-layer-item:not(.selected-item):hover {
+    color: #2c343f;
+    background-color: #f4f6fb;
+}

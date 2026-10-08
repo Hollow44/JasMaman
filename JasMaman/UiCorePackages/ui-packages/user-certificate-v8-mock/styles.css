@@ -1,0 +1,23 @@
+﻿.e-gov-mobile-qr {
+    width: 160px;
+    height: 160px;
+}
+
+.e-gov-mobile-qr-not-loaded {
+    background-image: url(images/qr-not-loaded.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.check-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.bg-check-icon {
+    background-image: url(images/check.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

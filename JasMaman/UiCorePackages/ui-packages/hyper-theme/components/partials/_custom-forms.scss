@@ -1,0 +1,33 @@
+// 
+// custom-forms.scss
+//
+
+.custom-file, .custom-file-input, .custom-file-label, .custom-select  {
+    height: calc(30px + 2px);
+    line-height: 1.15;
+}   
+
+.custom-select-lg {
+    height: calc(38px + 2px);
+}
+.custom-select-sm {
+    height: calc(22px + 2px); 
+    border-radius: $rounded-sm;
+}
+
+.custom-file-label::after  {
+    line-height: 1.15;
+}
+
+@each $color,
+$value in $theme-colors {
+    .custom-checkbox-#{$color},
+    .custom-radio-#{$color} {
+        .custom-control-input {
+            &:checked~.custom-control-label:before {
+                background-color: $value;
+                border-color: $value;
+            }
+        }
+    }
+}

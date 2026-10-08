@@ -1,0 +1,5 @@
+﻿@model Yoda.Interfaces.Forms.YodaForm;
+@{
+    Model.ViewData["YodaForm"] = Model;
+}
+@{Html.RenderPartial("~/Views/FormResult/FormView.cshtml", Model.ViewData);}

@@ -1,0 +1,84 @@
+﻿@using Yoda.Application.Helpers
+@using Yoda.Interfaces
+@using Yoda.Application.Models
+@using Microsoft.AspNetCore.Hosting;
+@using UsersResources;
+@using Yoda.Localization;
+@using Microsoft.Extensions.Hosting;
+@using Humanizer;
+@using Yoda.Controllers;
+@using YodaApp.Yoda.Application.Notifications;
+@using Microsoft.Extensions.DependencyInjection; 
+@inject INotificationsApiClientFactory notificationsApiClientFactory;
+@model Yoda.Application.Models.YodaRenderData
+@inject YodaApp.Yoda.Application.Avatars.IAvatarApiClientFactory avatarClient;
+
+@{
+    var rootDir = Url.Content("~/") + Model.CurrentLanguage + "/";
+    var filesRootDir = Url.Content("~/");
+    var dbMode = Model.RequestContext.AppEnv.HostEnvironment;
+    var showProductionEnvWarning = Model.ShowProductionEnvironmentWarning;
+    string T(LocalizableText text) {
+        var langTranslator = Model.RequestContext.LangTranslator;
+        return langTranslator.Translate(text, Model.CurrentLanguage, "view");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Theme/ui-packages/project-theme/logo/tab-icon.svg" />
+
+    @foreach (var cssFile in Model.StyleSheetFiles) {
+        using (new ConditionalCommentWrapper(Html, cssFile.ConditionalComment)) {
+            <link type="text/css" rel="stylesheet" href="@cssFile.File?v=@cssFile.Hash" />
+        }
+    }
+
+    <script type="text/javascript">
+        var rootDir = "@rootDir";
+    </script>
+
+
+
+</head>
+
+<body>
+
+    @if (dbMode.IsDevelopment()) {
+        <div class="connection-type-label bg-success px-2 text-white font-12">Тестовая база</div>
+    }
+    else if (dbMode.IsStaging()) {
+        <div class="connection-type-label bg-success px-2 text-white font-12">ДЕМО-база</div>
+    }
+    else if (dbMode.IsProduction()) {
+        if (showProductionEnvWarning) {
+            <div class="connection-type-label bg-danger px-2 text-white font-12">Рабочая база</div>
+        }
+    }
+    else {
+        <div class="connection-type-label bg-success px-2 text-white font-12">Текущее окружение: @dbMode.EnvironmentName</div>
+    }
+    <!-- Begin page -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12">
+        @if (!string.IsNullOrEmpty(TempData["PostbackMessage"] + string.Empty))
+        {
+        <div class="alert alert-info bg-white text-info" role="alert" id="postback-message">@(TempData["PostbackMessage"] + string.Empty)</div>
+        }
+
+        @{ Html.RenderPartial("MainContent"); }
+    </div> <!-- end col -->
+</div>
+    <!-- END wrapper -->
+
+    @foreach (var jsFile in Model.JsFiles) {
+        using (new ConditionalCommentWrapper(Html, jsFile.ConditionalComment)) {
+            <script src="@jsFile.File?v=@jsFile.Hash" type="text/javascript"></script>
+        }
+    }
+</body>
+</html>

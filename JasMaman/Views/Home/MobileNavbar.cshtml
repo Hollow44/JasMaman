@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Mvc.Routing;
+@using Microsoft.AspNetCore.Html;
+@using Yoda.Interfaces;
+@using Yoda.Interfaces.Menu;
+@using Microsoft.AspNetCore.Routing;
+@using System.Collections.Generic;
+@model Yoda.Application.Models.MenuInfo;
+
+@functions {
+    public IEnumerable<Yoda.Interfaces.Menu.Tree.MenuItem> GetMobileMenus(IEnumerable<Yoda.Interfaces.Menu.Tree.MenuItem> menuItems) {
+        var res = new List<Yoda.Interfaces.Menu.Tree.MenuItem>();
+        @foreach (var m in menuItems) {
+            if (m.IsNotEmpty && m.ModuleMenu.NativeMenuLink.MobileParameters is not null) {
+                res.Add(m);
+            }
+            if (m.Childs != null) {
+                res.AddRange(GetMobileMenus(m.Childs));
+            }
+        }
+        return res;
+    }
+    public async Task Render(IEnumerable<Yoda.Interfaces.Menu.Tree.MenuItem> menuItems, HashSet<string> selectedMenuItems) {
+        @foreach (var m in menuItems.OrderBy(x => x.ModuleMenu.NativeMenuLink.MobileParameters?.Weight ?? -1)) {
+            if (await m.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext)) {
+                var isActiveMenu = selectedMenuItems.Contains(m.ModuleMenu.RouteName);
+                var url = Html.YodaAction(m.ModuleMenu.ModuleName, m.ModuleMenu.NativeMenuLink.Name, new RouteValueDictionary(m.ModuleMenu.NativeMenuLink.RawQueryDefaultParams));
+                var mobileParameters = m.ModuleMenu.NativeMenuLink.MobileParameters;
+                <a class="mobile-navbar-btn @(isActiveMenu ? "active" : "")" href="@url">
+                    <i class="@mobileParameters.IconCssClass noti-icon font-21"></i>
+                    <p class="font-10">@mobileParameters.Title</p>
+                </a>
+            }
+        }
+    }
+}
+
+@{
+    var curItem = Model.CurMenuItem;
+    var selectedMenuItems = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+    while (curItem != null) {
+        selectedMenuItems.Add(curItem.ModuleMenu.RouteName);
+        curItem = curItem.Parent;
+    }
+    var mnus = GetMobileMenus(Model.Menu.Items);
+    var projectsOverviewUrl = Model.RequestContext.Configuration["projectsOverviewUrl"] ?? Model.RequestContext.YodaActionUrl("CabinetStartPageModule", "CabinetStartPage");
+    <div class="mobile-navbar">
+        @{
+            await Render(mnus, selectedMenuItems);
+        }
+        <a class="mobile-navbar-btn" href="@projectsOverviewUrl">
+            <i class="yodic yodic-services noti-icon font-21"></i>
+            <p class="font-10">@Model.RequestContext.T("Сервисы")</p>
+        </a>
+        <a class="mobile-navbar-btn" id="mobile-navbar-menu-btn" href="#">
+            <i class="yodic yodic-bars-menu noti-icon font-21"></i>
+            <p class="font-10">@Model.RequestContext.T("Меню")</p>
+        </a>
+    </div>
+}

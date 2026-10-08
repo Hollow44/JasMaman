@@ -1,0 +1,41 @@
+﻿.category-editor-item {
+    
+}
+.category-editor-item .source {
+    display: inline-block;
+    width: 400px;
+    text-align: right;
+}
+.category-editor-item .categories {
+    display: inline-block;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.translation-text-caption {
+    color: gray;
+}
+
+.translation-text {
+    font-weight: bold;
+}
+
+.translation-translated-text-caption {
+    color: gray;
+}
+
+.edit-translation {
+    cursor: pointer;
+    color: blue;
+}
+
+.translations-remove-text {
+    cursor: pointer;
+    color: red;
+	margin-left: 5px;
+}
+
+.translations-remove-text-msg {
+	color: red;
+    font-size: 18px;
+}

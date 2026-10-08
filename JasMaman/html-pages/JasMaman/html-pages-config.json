@@ -1,0 +1,90 @@
+﻿{
+  "JasMamanPublic": {
+    "html-pages": {
+      "public-info": {
+        "title": "Главная",
+        "menu-path": "info/start",
+        "file": "content/startpage.ru.htm",
+        "ui-packages": "jas-maman-html-pages;hide-page-title;html-pages",
+        "icon-css-class": "yodic yodic-home",
+        "weight": -0.5,
+        "visible": true,
+        "mobile-parameters": {
+          "icon-css-class": "yodic yodic-home",
+          "weight": 1
+        }
+      }
+    },
+    "defaults": {
+      "project": "JasMamanPublic",
+      "html-pages-menu-path": "info/help/{PageName}",
+      "ui-packages": "jas-maman-html-pages;html-pages"
+    }
+  },
+  "JasMamanModerator": {
+    "html-pages": {
+      "public-info": {
+        "title": "Главная",
+        "menu-path": "info/start",
+        "file": "content/startpage.ru.htm",
+        "ui-packages": "jas-maman-html-pages;hide-page-title;html-pages",
+        "icon-css-class": "yodic yodic-home",
+        "weight": -0.5,
+        "visible": true,
+        "mobile-parameters": {
+          "icon-css-class": "yodic yodic-home",
+          "weight": 1
+        }
+      }
+    },
+    "defaults": {
+      "project": "JasMamanModerator",
+      "html-pages-menu-path": "info/help/{PageName}",
+      "ui-packages": "jas-maman-html-pages;html-pages"
+    }
+  },
+  "JasMamanInternal": {
+    "html-pages": {
+      "public-info": {
+        "title": "Главная",
+        "menu-path": "info/start",
+        "file": "content/startpage.ru.htm",
+        "ui-packages": "jas-maman-html-pages;hide-page-title;html-pages",
+        "icon-css-class": "yodic yodic-home",
+        "weight": -0.5,
+        "visible": true,
+        "mobile-parameters": {
+          "icon-css-class": "yodic yodic-home",
+          "weight": 1
+        }
+      }
+    },
+    "defaults": {
+      "project": "JasMamanInternal",
+      "html-pages-menu-path": "info/help/{PageName}",
+      "ui-packages": "jas-maman-html-pages;html-pages"
+    }
+  },
+  "JasMamanUniversity": {
+    "html-pages": {
+      "public-info": {
+        "title": "Главная",
+        "menu-path": "info/start",
+        "file": "content/startpage.ru.htm",
+        "ui-packages": "jas-maman-html-pages;hide-page-title;html-pages",
+        "icon-css-class": "yodic yodic-home",
+        "weight": -0.5,
+        "visible": true,
+        "mobile-parameters": {
+          "icon-css-class": "yodic yodic-home",
+          "weight": 1
+        }
+      }
+    },
+    "defaults": {
+      "project": "JasMamanUniversity",
+      "html-pages-menu-path": "info/help/{PageName}",
+      "ui-packages": "jas-maman-html-pages;html-pages"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+﻿//filter structure
+
+filter: {
+	filterOp: "AND",
+	conditions: [
+		{leftField:{parentTable:"", fieldName:""}, condOp: "Equal", rightValue: {type:"", value: "someValue"}},
+	],
+	logicGroups: []//array of filter
+}
+
+condition rightValue type may be: required on join filter);

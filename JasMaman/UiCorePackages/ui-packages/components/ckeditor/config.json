@@ -1,0 +1,7 @@
+﻿{ 
+	require: [],
+	loadOnly: {
+		css:[],
+		js:["ckeditor.js"]
+	}
+ }

@@ -1,0 +1,9 @@
+﻿@{
+    var verticalLayout = true; /*Choose your orientation here: True - vertical (left menu) , False - horizontal (top menu)*/
+    if (verticalLayout)
+    {
+        await Html.RenderPartialAsync("LayoutVertical");
+    }else{
+        await Html.RenderPartialAsync("LayoutHorizontal");
+    }
+}

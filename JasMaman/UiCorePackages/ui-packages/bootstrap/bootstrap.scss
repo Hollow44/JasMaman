@@ -1,0 +1,13 @@
+@import "variables";
+
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+
+span.form-control {
+    height: auto;
+    min-height: calc(2.25rem + 2px);
+}
+
+.input-validation-error {
+    border-color: $red;
+}

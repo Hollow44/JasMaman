@@ -1,0 +1,2 @@
+SELECT pg_catalog.setval('public.seq_entity_id', GREATEST(3000, pg_catalog.nextval('public.seq_entity_id')), true);
+SELECT pg_catalog.setval('public.seq_request_id', GREATEST(6000, pg_catalog.nextval('public.seq_request_id')), true);

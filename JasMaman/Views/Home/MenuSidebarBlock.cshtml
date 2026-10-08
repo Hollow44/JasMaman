@@ -1,0 +1,148 @@
+﻿@using Microsoft.AspNetCore.Mvc.Routing;
+@using Microsoft.AspNetCore.Html;
+@using Yoda.Interfaces;
+@using Yoda.Interfaces.Menu;
+@using Microsoft.AspNetCore.Routing;
+@using System.Collections.Generic;
+@model Yoda.Application.Models.MenuInfo;
+
+@functions {
+    public async Task Render(IEnumerable<Yoda.Interfaces.Menu.Tree.MenuItem> menuItems, int level, HashSet<string> selectedMenuItems)
+    {
+        if (menuItems == null || !menuItems.Any(item => (item.ModuleMenu != null) && (item.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal)))
+        {
+            return;
+        }
+        var isExpanded = menuItems.Any(x => selectedMenuItems.Contains(x.ModuleMenu.RouteName));
+        var collapseClass = isExpanded switch
+        {
+            true => "mm-show",
+            false => string.Empty
+        };
+
+        var navMenuClass = level switch
+        {
+            0 => "metismenu side-nav",
+            1 => "side-nav-second-level mm-collapse ",
+            2 => "side-nav-third-level mm-collapse ",
+            3 => "side-nav-forth-level mm-collapse ",
+            _ => ""
+        };
+
+        Write(new HtmlString(string.Format("<ul class='{0} {1}' aria-expanded='false'>", navMenuClass, collapseClass)));
+        foreach (var link in menuItems.OrderBy(x => x.ModuleMenu.NativeMenuLink.Weight))
+        {
+            if (link.ModuleMenu == null)
+                continue;
+            if (link.ModuleMenu.NativeMenuLink.MenuType != MenuType.Normal)
+                continue;
+
+            var isActiveMenu = selectedMenuItems.Contains(link.ModuleMenu.RouteName);
+            var liClass = string.Empty;
+            if (isActiveMenu)
+            {
+                liClass = "mm-active";
+            }
+            if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.CssClass))
+            {
+                liClass += " " + link.ModuleMenu.NativeMenuLink.CssClass;
+            }
+
+
+            var hasChildren = (link.Childs != null && link.Childs.Any(child => child.ModuleMenu != null && child.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal));
+
+            if (!hasChildren && isActiveMenu)
+            {
+                //liClass += " selected";
+            }
+
+            if (link.IsNotEmpty)
+            {
+                if (await link.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext))
+                {
+                    if (link.ModuleMenu.NativeMenuLink.IsNavTitleMenu)
+                    {
+                        WriteLiteral($"<li class='side-nav-title side-nav-item {liClass}' weight='{link.ModuleMenu.NativeMenuLink.Weight}'>");
+                        Write(link.Text);
+                        WriteLiteral("</li>");
+                    }
+                    else
+                    {
+
+                        WriteLiteral($"<li class='side-nav-item {liClass}' weight='{link.ModuleMenu.NativeMenuLink.Weight}'>");
+                        string url;
+                        if (hasChildren)
+                        {
+                            url = "javascript: void(0);";
+                        }
+                        else
+                        {
+                            url = Html.YodaAction(link.ModuleMenu.ModuleName, link.ModuleMenu.NativeMenuLink.Name, new RouteValueDictionary(link.ModuleMenu.NativeMenuLink.RawQueryDefaultParams));
+                        }
+
+
+                        WriteLiteral($"<a href='{url}' aria-expanded='{(hasChildren ? "true" : "false")}' class='{(level == 0 ? "side-nav-link" : string.Empty)}'>");
+                        if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.IconCssClass))
+                        {
+                            WriteLiteral($"<i class='{link.ModuleMenu.NativeMenuLink.IconCssClass}'></i>");
+                        }
+
+                        var badge = link.ModuleMenu.NativeMenuLink.MenuBadge?.Invoke(Model.RequestContext);
+                        if (badge != null)
+                        {
+                            WriteLiteral($"<span class='badge badge-{badge.ContextualColor.ToString().ToLower()} float-right'>{badge.Text}</span>");
+                        }
+
+                        WriteLiteral($"<span>{link.Text}</span>");
+
+                        if (hasChildren)
+                        {
+                            WriteLiteral("<span class='menu-arrow'/>");
+                        }
+                        WriteLiteral("</a>");
+                        await Render(link.Childs, level + 1, selectedMenuItems);
+                        WriteLiteral("</li>");
+                    }
+                }
+            }
+            else
+            {
+                var childAction = link.FindFirstChildAction(Model.RequestContext);
+                if (childAction != null)
+                {
+                    if (await link.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext))
+                    {
+
+                        WriteLiteral($"<li class='side-nav-item {liClass}' weight='{link.ModuleMenu.NativeMenuLink.Weight}'>");
+
+                        WriteLiteral($"<a href='javascript: void(0);' aria-expanded='{(hasChildren ? "true" : "false")}'  class='{(level == 0 ? "side-nav-link" : string.Empty)}'>");
+                        if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.IconCssClass))
+                        {
+                            WriteLiteral($"<i class='{link.ModuleMenu.NativeMenuLink.IconCssClass}'></i>");
+                        }
+                        WriteLiteral($"<span>{link.Text}</span><span class='menu-arrow'/>");
+
+                        WriteLiteral("</a>");
+                        await Render(link.Childs, level + 1, selectedMenuItems);
+                        WriteLiteral("</li>");
+                    }
+                }
+            }
+        }
+        Write(new HtmlString("</ul>"));
+    }
+}
+
+@{
+    var curItem = Model.CurMenuItem;
+    var selectedMenuItems = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+    while (curItem != null)
+    {
+        selectedMenuItems.Add(curItem.ModuleMenu.RouteName);
+        curItem = curItem.Parent;
+    }
+    if (Model != null && Model.Menu != null)
+    {
+        await Render(Model.Menu.Items, 0, selectedMenuItems);
+    }
+}

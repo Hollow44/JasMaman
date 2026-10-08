@@ -1,0 +1,16 @@
+﻿@using Yoda.Interfaces.Forms;
+
+@{
+    var form = (YodaForm) ViewData["YodaForm"];
+    form.Elements.Sort();
+}
+@form.ToHtmlString(Html)
+
+@*
+@if(form.RenderOnlyContent) {
+    Html.RenderPartial("~/Views/FormResult/FormContentRender.cshtml");
+}else {
+    Html.RenderPartial("~/Views/FormResult/FullFormRender.cshtml");
+}
+*@
+

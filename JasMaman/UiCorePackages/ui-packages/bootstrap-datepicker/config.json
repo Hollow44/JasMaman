@@ -1,0 +1,6 @@
+﻿{
+	"require": [ "bootstrap" ],
+	"requireInternal": {
+		"bootstrap-datepicker.locales.js": [ "bootstrap-datepicker.min.js" ]
+	}
+}

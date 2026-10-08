@@ -1,0 +1,138 @@
+﻿.filter-item {
+    margin-top: 3px;
+    border: 0.5px solid #ececec;
+    border-radius: 2px;
+    padding: 3px;
+    padding-top: 7px;
+    background-color: #f6f6f6;
+}
+
+.filter-item-name,.filter-item-operator, .filter-item-value {
+	cursor: pointer;
+    padding-left: 4px;
+    padding-right: 2px;
+}
+.filter-item-name {
+    color: #272626;
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.filter-item-operator {
+	color: green;
+    margin-left: 3px;
+    margin-right: 3px;
+    display: inline-block;
+    width: 110px;
+    overflow: hidden;
+}
+
+.filter-item-value {
+    font-weight: 400;
+    max-width: 280px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #516fdf;
+}
+
+.filter-item-clear  {
+	color: #f74c4c;
+	margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+	overflow: hidden;
+	display: inline-block;
+    height: 14px;
+    margin-bottom: 4px;
+}
+.filter-item-remove {
+    color: #a9a9a9;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    height: 16px;
+    margin-bottom: 2px;
+}
+
+.btn-add-filter-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.common-filter-editor {
+    margin-bottom: 5px;
+ }
+
+.common-filter-editor .filter-item-operator {
+	display: none;
+}
+
+.select-filter-item-option,.select-filter-operator-option {
+	cursor: pointer;
+	display: block;
+	color: #0042ad;
+}
+.select-filter-item-option:hover,.select-filter-operator-option:hover {
+text-decoration: underline;
+}
+
+.ya-filter-context-dialog {
+    background-color: white;
+    padding: 10px;
+    border-radius: 2px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 2px 2px 5px 0px rgba(141, 141, 141, 0.4);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(141, 141, 141, 0.4);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 2px 2px 5px 0px rgba(141, 141, 141, 0.4);
+    z-index: 2000;
+}
+
+
+
+
+/* $referenceFilterEditor */
+.ya-filter-context-dialog .ref-multi-item {
+    padding-left: 16px;
+    background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.ya-filter-context-dialog .ref-multi-item.unchecked {
+    background-image: url("images/checkbox-unchecked.png");
+}
+
+.ya-filter-context-dialog .ref-multi-item.checked {
+    background-image: url("images/checkbox-checked.png");
+}
+
+.ya-filter-context-dialog .ref-multi-item.intermediate {
+    background-image: url("images/checkbox-partial.png");
+}
+
+.ya-filter-context-dialog .ref-multi-child-items {
+    margin-left: 25px;
+}
+
+.ya-filter-context-dialog .ref-multi-expander {
+    padding-left: 8px;
+    padding-right: 8px;
+    background-repeat: no-repeat;
+}
+
+.ya-filter-context-dialog .ref-multi-expander.collapsed {
+    background-image: url(images/collapsed.png)
+}
+
+.ya-filter-context-dialog .ref-multi-expander.expanded {
+    background-image: url(images/expanded.png)
+}
+/* end $referenceFilterEditor */

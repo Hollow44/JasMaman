@@ -1,0 +1,36 @@
+{
+  "name": "react_js_compiler",
+  "version": "1.0.0",
+  "description": "Gulp tasks",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Nurzhas",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^3.1.2",
+    "bootstrap": "^4.5.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^7.0.1",
+    "gulp-debug": "^3.2.0",
+    "gulp-dotnet-cli": "^1.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^5.1.0",
+    "jquery": "3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "browserslist": [
+    "last 71 version"
+  ],
+  "dependencies": {
+    "node-sass": "^7.0.3",
+    "puppeteer": "^18.2.1",
+    "sass": "^1.55.0"
+  }
+}

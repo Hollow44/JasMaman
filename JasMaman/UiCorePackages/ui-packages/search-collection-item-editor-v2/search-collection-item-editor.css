@@ -1,0 +1,15 @@
+﻿.search-query-input-toolbar {
+    margin-bottom: 10px;
+}
+
+.search-collection-result-empty, .searching-in-process {
+    font-style: italic;
+    text-align: center;
+}
+
+.search-collection-item {
+    cursor: pointer;
+}
+.search-collection-item:hover {
+    background: #eff4ff;
+}

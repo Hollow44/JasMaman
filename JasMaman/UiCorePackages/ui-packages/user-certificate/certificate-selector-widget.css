@@ -1,0 +1,167 @@
+﻿#InternalUserLogIn {
+    width: 100%;
+}
+
+#UserLogIn {
+    width: 100%;
+    /*text-align: center;*/
+}
+.loginformcontainer
+{
+ max-width: 650px;
+ display: inline-block; 
+ padding: 20px;
+    border-radius: 2px;
+    background-color: #fff !important;
+    
+    border: 0.5px solid #e1e0e0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.04);
+}
+.loginformcontainer .yfe-label
+{
+    display: block;
+    text-align: left;  
+}
+.certificate-upload-button {
+    display: inline-block;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    font-size: 11px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #0acf97;
+    background-image: url("pc-white.png");
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    background-size: 32px;
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+    .certificate-upload-button:hover {
+        background-color: #08ab7c;
+    }
+
+.certificate-upload-button.disabled, .certificate-upload-button.disabled:hover {
+	background-color: #C4C4C4;
+}
+
+#cert-selector-file {
+	display: none;
+}
+
+.password-prompt-dlg .password-input {
+	width: 98%;
+}
+
+.password-prompt-dlg .password-label {
+	padding-bottom: 4px;
+    display: block;
+}
+
+.password-invalid-msg {
+	display: none;
+}
+
+.password-prompt-dlg.invalid-pwd .password-invalid-msg {
+	display: block;
+	color: red;
+}
+
+.password-prompt-dlg.invalid-pwd .password-input {
+	border-color: red;
+}
+
+#selected-cert-info {
+   margin-top: 10px; 
+}
+
+#no-selected-cert {
+    color: #969696;
+    text-align: left;
+}
+
+.applet-java-download-info, .widget-extra-info {
+	padding-bottom:5px;
+	color: rgb(82, 90, 144);
+}
+
+.applet-java-download-info, .widget-extra-info, .applet-java-download-info a, .widget-extra-info a {
+	font-size:0.9em;
+}
+
+.applet-java-download-info a, .widget-extra-info a {
+	color: rgb(47, 97, 174);
+}
+
+/*NCALayer*/
+.nca-layer-error-dlg  ul{
+	padding-left: 15px;
+}
+
+.nca-layer-error-dlg  li{
+	padding: 3px;
+}
+
+.nca-layer-error-dlg .main-info{
+	color:#943333;
+	font-size:1.3em;
+	font-weight:bold;
+}
+.nca-layer-error-dlg .extra-info{
+	padding-top:4px;
+}
+
+.nca-layer-error-dlg .links{
+	padding-top:10px;
+}
+
+.nca-layer-error-dlg .extra-steps-container {
+	padding-top:10px;
+}
+
+.nca-layer-error-dlg .extra-steps-container ul{
+	list-style-type: disc;
+	padding-left: 30px;
+}
+
+.nca-layer-error-dlg .extra-steps-header{
+	padding-bottom: 1px;
+    border-bottom: 1px dotted;
+	color:#004BBB;
+	cursor:pointer;
+	font-weight:bold;
+}
+
+.nca-layer-error-dlg .extra-steps {
+	margin-top: 5px;
+}
+/* Блок "Дополнительные шагu" теперь виден всегда. */
+/*.nca-layer-error-dlg .extra-steps {
+	display:none;
+}*/
+
+.nca-layer-error-dlg .extra-steps-container.expanded .extra-steps {
+	display:block;
+}
+
+
+.td-cert-owner {
+    font-weight: bold;
+}
+
+.td-cert-expiring {
+    color: darkorange;
+}
+.td-cert-expired {
+    color: orangered;
+}

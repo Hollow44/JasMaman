@@ -1,0 +1,212 @@
+﻿/*
+.pg-table td{
+	padding: 5px;
+	border: 1px solid gray;
+}
+.pg-table-cols-header {
+	background-color: lightgray;
+}
+.pg-table-col-header-cell {
+	text-align: center;
+	font-weight: bold;
+}
+.pg-table-row-header-cell {
+	
+}
+ .pg-table-value-cell {
+    text-align: right;
+}
+
+*/ 
+
+.pg-table-total-row {
+    font-weight: bold;
+}
+
+ul.pg-group-fields, ul.pg-data-fields {
+    padding: 4px;
+    margin: 4px;
+    min-height: 12px;
+}
+#pgDataFieldsOutput {
+	background-color: white;
+}
+.pg-data-fields li, .pg-group-fields li 
+{
+	cursor: move;
+    background-color: #F1F1F1;
+    border: 1px solid #eaeaea;
+	margin: 3px;
+	padding: 3px;
+}
+
+.pg-data-fields>li:hover, .pg-group-fields>li.dim-field:hover, .pg-group-fields .dim-data-field-text:hover {
+	background-color: lightblue;
+}
+.dim-data-field-text {
+    padding: 3px;
+}
+
+li.dim-data-field {
+    background-color: aliceblue;
+}
+
+.rda-exec-action {
+	display: inline-block;
+    background-color: cornflowerblue;
+    color: white;
+	margin: 5px;
+}
+
+.reports-data-aggregator-designer .markup-table {
+	width: 100%;
+	margin-top: 12px;
+}
+
+.reports-data-aggregator-designer .markup-table table {
+	width: 100%;
+}
+
+
+.reports-data-aggregator-designer .markup-table td {
+	
+}
+
+.reports-data-aggregator-designer .markup-table .delemiter {
+	width: 4px;
+}
+
+.reports-data-aggregator-designer .markup-table td {
+	vertical-align: top;
+}
+
+.reports-data-aggregator-designer .markup-table .left-col-header {
+	background-color: #008000;
+	text-align: center;
+	padding: 3px;
+	color: white;
+	text-transform: uppercase;
+	width: 33%;
+}
+
+.reports-data-aggregator-designer .markup-table .middle-col-header {
+	background-color: #6F6F6F;
+	text-align: center;
+	padding: 3px;
+	color: white;
+	text-transform: uppercase;
+	width: 33%;
+	border-left: 4px solid #E0E0E0;
+    border-right: 4px solid #E0E0E0;
+}
+
+.reports-data-aggregator-designer .markup-table .right-col-header {
+	background-color: #1F77B4;
+	text-align: center;
+	padding: 3px;
+	color: white;
+	text-transform: uppercase;
+	width: 33%;
+}
+
+.reports-data-aggregator-designer .markup-table .left-col {
+	background-color: white;
+	padding-top: 10px;
+	    border-bottom: 3px solid #008000;
+}
+.reports-data-aggregator-designer .markup-table .middle-col {
+	background-color: white;
+	padding-top: 10px;
+	border-left: 4px solid #E0E0E0;
+    border-right: 4px solid #E0E0E0;
+        border-bottom: 3px solid #6F6F6F;
+}
+.reports-data-aggregator-designer .markup-table .right-col {
+	background-color: white;
+	padding-top: 10px;
+	    border-bottom: 3px solid #1F77B4;
+}
+
+.reports-data-aggregator-designer .markup-table td.arrow-delemiter {
+	width: 30px;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+.pg-group-title {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+.pg-group-fields.activated, .pg-data-fields.activated, #pgDataFieldsOutput.activated {
+	background-color: #FFFFE5;
+	/*border: 1px dashed green;*/
+	border: 1px dashed #DCCE00;
+}
+
+li.dim-field {
+    background-color: #E5FFE5;
+}
+
+ul#pgDataFieldsAll li {
+    background-color: #F0F9FF;
+}
+ul#pgDataFieldsAll li:hover {
+    background-color: lightblue;
+}
+
+
+
+.pivot-table-data .pg-table-cols-header {
+	background-color: #1F77B4;
+	color: white;
+}
+.pivot-table-data .pg-table-col-header-cell {
+	text-align: center;
+	font-weight: normal;
+}
+
+
+.rda-new-links-container {
+	display: table;
+    margin: 0 auto;
+}
+.rda-new-lnk {
+	display: inline-block;
+    /* height: 200px; */
+    width: 200px;
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    text-align: center;
+    background-color: white;
+    margin: 3px;
+    color: #545454;
+    border: 1px solid #DADADA;
+    padding-top: 170px;
+    padding-bottom: 10px;
+}
+.rda-new-lnk:hover {
+    border: 1px solid #B9B9B9;
+    text-decoration: none;
+}
+
+.rda-new-pivot-lnk {
+	background-image: url(images/table-pivot.png)
+}
+.rda-new-pie-lnk {
+	background-image: url(images/chart-pie.png)
+}
+.rda-new-bar-lnk {
+	background-image: url(images/chart-bar.png)
+}
+.rda-new-line-lnk {
+	background-image: url(images/chart-line.png)
+}

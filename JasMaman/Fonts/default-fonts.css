@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'times';
+    src: url('$CurDir$/times.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'times';
+    src: url('$CurDir$/timesi.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'times';
+    src: url('$CurDir$/timesbd.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'times';
+    src: url('$CurDir$/timesbi.ttf') format('truetype');
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('$CurDir$/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('$CurDir$/Roboto-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('$CurDir$/Roboto-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('$CurDir$/Roboto-BoldItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ibm-plex';
+    src: url('$CurDir$/IBM_Plex_Serif/IBMPlexSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ibm-plex';
+    src: url('$CurDir$/IBM_Plex_Serif/IBMPlexSerif-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ibm-plex';
+    src: url('$CurDir$/IBM_Plex_Serif/IBMPlexSerif-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ibm-plex';
+    src: url('$CurDir$/IBM_Plex_Serif/IBMPlexSerif-BoldItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: bold;
+}

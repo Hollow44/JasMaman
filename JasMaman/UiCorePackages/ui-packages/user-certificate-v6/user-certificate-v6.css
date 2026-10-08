@@ -1,0 +1,50 @@
+﻿.user-certificate-v6-container {
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+.e-gov-mobile-qr {
+    width: 100%;
+    max-width: 160px;
+}
+
+.cert-info-container {
+    animation: fade-in 0.5s ease-in;
+    background-color: #EBFFE6;
+    border-radius: 8px;
+    word-break: break-word;
+}
+
+.cert-info-attr-title {
+    white-space: nowrap;
+}
+
+.cert-info-attr-value {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6F757D;
+
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

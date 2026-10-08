@@ -1,0 +1,31 @@
+﻿/* $referenceFilterEditor */
+.ref-multi-item {
+    padding-left: 16px;
+    background-repeat: no-repeat;
+}
+.ref-multi-item.unchecked {
+    background-image: url("images/checkbox-unchecked.png");
+}
+.ref-multi-item.checked {
+    background-image: url("images/checkbox-checked.png");
+}
+.ref-multi-item.intermediate {
+    background-image: url("images/checkbox-partial.png");
+}
+
+.ref-multi-child-items {
+    margin-left: 25px;
+}
+.ref-multi-expander {
+    padding-left: 8px;
+    padding-right: 8px;
+    background-repeat: no-repeat;
+}
+.ref-multi-expander.collapsed {
+    background-image: url(images/collapsed.png)
+}
+.ref-multi-expander.expanded {
+    background-image: url(images/expanded.png)
+}
+/* end $referenceFilterEditor */
+

@@ -1,0 +1,6 @@
+﻿{ 
+	Require: [],
+	RequireInternal: {
+		"cfg-gis.js": [ "ol.js", "proj4.js" ]
+	}
+}

@@ -1,0 +1,18 @@
+.actual-contact-value {
+    font-size: 16px;
+    color: green;
+}
+.not-confirmed-contact {
+    color: red;
+}
+.not-confirmed-contact-info {
+    color: red;
+    font-style: italic;
+}
+
+.btn-contact {
+    font-style: italic;
+}
+.re-send-confirm-code {
+    margin-left: 5px;
+}

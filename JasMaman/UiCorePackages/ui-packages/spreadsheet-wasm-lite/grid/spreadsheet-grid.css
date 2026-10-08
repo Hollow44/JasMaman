@@ -1,0 +1,349 @@
+﻿.sg-editor table.sg-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 2px;
+}
+
+    .sg-editor table.sg-table th,
+    .sg-editor table.sg-table td {
+        border-top: 1px solid #c8c8c8;
+        border-left: 1px solid #c8c8c8;
+        padding: 2px;
+    }
+
+        .sg-editor table.sg-table td.sg-br {
+            border-right: 1px solid #c8c8c8;
+        }
+
+        .sg-editor table.sg-table td.sg-tc {
+            border-top: none;
+            padding: 0;
+        }
+
+        .sg-editor table.sg-table td.sg-tr {
+            border-left: none;
+            padding: 0;
+        }
+
+.grid-description {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 4px;
+    font-weight: bold;
+}
+
+div.sg-editor {
+    min-height: 600px;
+    background-color: white;
+    color: black;
+}
+
+.sg-editor:fullscreen {
+    overflow: auto;
+    padding: 2px;
+}
+    .sg-editor:fullscreen .sg-editor-body {
+        display: flex;
+        flex-flow: column;
+        height:100%;
+    }
+    .sg-editor:fullscreen .grid-errors {
+        flex: 0 0 auto;
+    }
+    .sg-editor:fullscreen .grid-header {
+        flex: 0 1 auto;
+    }
+    .sg-editor:fullscreen .sg-table-wrapper {
+        flex: 1 1 auto;
+        overflow: auto;
+    }
+
+    .sg-editor .grid-header tr.sg-nav-header {
+        border-bottom: 1px solid white;
+    }
+
+.grid-cell-edit-input {
+    text-align: inherit;
+    font-weight: inherit;
+    font: inherigt;
+    font-size: inherit;
+    vertical-align: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0px;
+    resize: none;
+    max-width: 1000px;
+}
+
+.sg-editor table.sg-table td {
+    height: inherit;
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    background-color: white;
+}
+
+    .sg-editor table.sg-table td.input-cell {
+        background-color: #e4ecfb;
+    }
+
+    .sg-editor table.sg-table td.rhead {
+        background-color: #f6f6f6;
+        border-right: 1px solid #c8c8c8;
+    }
+
+.sg-editor col.col-rhead {
+    width: 20px;
+}
+
+.sg-editor .btn {
+    cursor: pointer;
+}
+
+.sg-editor td.rhead {
+    vertical-align: middle;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+    .sg-editor td.rhead.removable {
+        cursor: pointer;
+    }
+
+    .sg-editor td.rhead:hover, .sg-editor tr.removing td.rhead {
+        color: red;
+    }
+
+td.fw-bold {
+    font-weight: bold !important;
+}
+
+td.va-bottom {
+    vertical-align: bottom;
+}
+
+td.va-middle {
+    vertical-align: middle;
+}
+
+td.va-top {
+    vertical-align: top;
+}
+
+td.ha-justify {
+    text-align: justify;
+}
+
+td.ha-center {
+    text-align: center;
+}
+
+td.ha-right {
+    text-align: right;
+}
+
+td.ha-left {
+    text-align: left;
+}
+
+tr.duplicable td {
+    filter: opacity(60%);
+}
+
+tr.removing td {
+    background-color: #ffdddd !important;
+}
+
+.sg-editor table.sg-table thead td {
+    background-color: #f6f6f6;
+    font-weight: normal; /* normalize context styles */
+}
+
+/* === grid header === */
+
+.dropdown-menu.pages {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+    .dropdown-menu.pages .dropdown-header {
+        cursor: default;
+    }
+
+    .dropdown-menu.pages .page-id {
+        color: green;
+    }
+
+    .dropdown-menu.pages .page-text {
+        font-size: smaller;
+        color: gray;
+    }
+
+.grid-header .dropdown-menu .dropdown-item {
+    cursor: pointer;
+}
+
+    .grid-header .dropdown-menu .dropdown-item.selected {
+        background-color: #e6e6e6;
+    }
+
+    .grid-header .dropdown-menu .dropdown-item:active {
+        background-color: #e6e6e6;
+    }
+
+.grid-header .nav-link {
+    padding: 0.3rem 0.7rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.dropdown-menu.langs .lang-text {
+    color: #505050;
+}
+
+.grid-header {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+    .grid-header table {
+        width: 100%;
+        border: none;
+    }
+
+        .grid-header table td {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+td.fit-width {
+    width: 1px;
+    white-space: nowrap;
+}
+
+td.page-unit {
+    background-color: #fffedc;
+    color: #505050;
+    border: 1px solid orange;
+    font-size: smaller;
+}
+
+td.page-title {
+    background-color: #fffedc;
+    color: #505050;
+    border: 1px solid orange;
+    font-size: smaller;
+}
+
+.grid-saving .msg-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: gray;
+    opacity: 0.3;
+}
+
+.grid-saving .msg-panel {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -100px;
+    margin-top: -50px;
+    z-index: 101;
+    background-color: #f8f8f8;
+    padding: 30px;
+    border: 1px solid gray;
+    cursor: default;
+}
+
+.sg-editor td.highlighted-cell {
+    -webkit-animation-name: highlighted-cell;
+    -webkit-animation-duration: 1s;
+    animation-name: highlighted-cell;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes highlighted-cell {
+    from {
+        background-color: red;
+    }
+}
+
+@keyframes highlighted-cell {
+    from {
+        background-color: red;
+    }
+}
+
+.sg-editor td.pasted-cell {
+    border: 2px solid green !important;
+}
+
+.sg-editor td.has-error {
+    border: 2px solid red !important;
+}
+
+.grid-errors {
+    border: 1px solid red;
+    padding: 3px;
+    background-color: #ffe7e7;
+    border-radius: 3px;
+    max-height: 180px;
+    overflow: auto;
+}
+
+    .grid-errors .error-number {
+        font-size: smaller;
+        color: #c28787;
+        margin-left: 10px;
+    }
+
+    .grid-errors .error-title {
+        font-size: smaller;
+        color: #b40808;
+    }
+
+    .grid-errors .grid-error-item {
+        border-bottom: 1px solid #fec6c6;
+        cursor: default;
+    }
+
+        .grid-errors .grid-error-item:last-child {
+            border-bottom: none;
+        }
+
+td.book-errors {
+    background-color: #fffedc;
+    color: #b40808;
+    border: 1px solid orange;
+    font-size: smaller;
+    cursor: pointer;
+}
+
+    td.book-errors.active, td.book-errors.active:hover {
+        background-color: #b40808;
+        color: white;
+        border: 1px solid red;
+    }
+
+    td.book-errors:hover {
+        background-color: #fff1dc;
+    }
+
+.sg-editor .sg-table thead td {
+    position: sticky;
+    z-index: 2;
+}
+
+    .sg-editor .sg-table thead td.fixed {
+        z-index: 3;
+    }
+
+.sg-editor .sg-table tbody td.fixed {
+    position: sticky;
+    z-index: 1;
+}

@@ -1,0 +1,1 @@
+﻿{ "require": [ "jquery.file-upload", "jquery.block-ui", "components.fileuploader", "search-collection-item-editor" ] }

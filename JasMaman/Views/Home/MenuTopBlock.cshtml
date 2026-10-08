@@ -1,0 +1,152 @@
+﻿@using Microsoft.AspNetCore.Mvc.Routing;
+@using Microsoft.AspNetCore.Html;
+@using Yoda.Interfaces;
+@using Yoda.Interfaces.Menu;
+@using Microsoft.AspNetCore.Routing;
+@using System.Collections.Generic;
+@model Yoda.Application.Models.MenuInfo;
+
+@functions {
+    public async Task Render(IEnumerable<Yoda.Interfaces.Menu.Tree.MenuItem> menuItems, int level, HashSet<string> selectedMenuItems)
+    {
+        if (menuItems == null || !menuItems.Any(item => (item.ModuleMenu != null) && (item.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal)))
+        {
+            return;
+        }
+
+        Write(new HtmlString("<div class=\"dropdown-menu\">"));
+        foreach (var link in menuItems.OrderBy(x => x.ModuleMenu.NativeMenuLink.Weight)) {
+            if (link.ModuleMenu == null)
+                continue;
+            if (link.ModuleMenu.NativeMenuLink.MenuType != MenuType.Normal)
+                continue;
+
+            var isActiveMenu = selectedMenuItems.Contains(link.ModuleMenu.RouteName);
+            var liClass = string.Empty;
+            if (isActiveMenu)
+            {
+                liClass = "mm-active";
+            }
+            if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.CssClass))
+            {
+                liClass += " " + link.ModuleMenu.NativeMenuLink.CssClass;
+            }
+
+
+            var hasChildren = (link.Childs != null && link.Childs.Any(child => child.ModuleMenu != null && child.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal));
+
+            if (!hasChildren && isActiveMenu)
+            {
+                //liClass += " selected";
+            }
+
+            if (link.IsNotEmpty || link.FindFirstChildAction(Model.RequestContext) != null)
+            {
+                if (await link.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext))
+                {
+                    if (link.ModuleMenu.NativeMenuLink.IsNavTitleMenu)
+                    {
+                        //do nothing, not supported in top nav menu
+                    }
+                    else
+                    {
+
+                        if (hasChildren)
+                        {
+                            WriteLiteral("<div class='dropdown'>");
+                            WriteLiteral($"<a href='#' class='dropdown-item dropdown-toggle arrow-none' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
+                            if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.IconCssClass))
+                            {
+                                WriteLiteral($"<i class='{link.ModuleMenu.NativeMenuLink.IconCssClass}'></i>");
+                            }
+                            var badge = link.ModuleMenu.NativeMenuLink.MenuBadge?.Invoke(Model.RequestContext);
+                            if (badge != null)
+                            {
+                                WriteLiteral($"<span class='badge badge-{badge.ContextualColor.ToString().ToLower()} float-right'>{badge.Text}</span>");
+                            }
+
+
+                            WriteLiteral(link.Text);
+                            WriteLiteral("<div class='arrow-down'></div>");
+                            WriteLiteral("</a>");
+                            await Render(link.Childs, level + 1, selectedMenuItems);
+                            WriteLiteral("</div>");
+                        }
+                        else {
+                            var url = Html.YodaAction(link.ModuleMenu.ModuleName, link.ModuleMenu.NativeMenuLink.Name, new RouteValueDictionary(link.ModuleMenu.NativeMenuLink.RawQueryDefaultParams));
+                            WriteLiteral($"<a href='{url}' class='dropdown-item'>");
+                            if (!string.IsNullOrEmpty(link.ModuleMenu.NativeMenuLink.IconCssClass))
+                            {
+                                WriteLiteral($"<i class='{link.ModuleMenu.NativeMenuLink.IconCssClass}'></i>");
+                            }
+                            var badge = link.ModuleMenu.NativeMenuLink.MenuBadge?.Invoke(Model.RequestContext);
+                            if (badge != null)
+                            {
+                                WriteLiteral($"<span class='badge badge-{badge.ContextualColor.ToString().ToLower()} float-right'>{badge.Text}</span>");
+                            }
+                            WriteLiteral($"<span>{link.Text}</span>");
+                            WriteLiteral("</a>");
+                        }
+                    }
+                }
+            }
+        }
+        Write(new HtmlString("</div>"));
+    }
+}
+
+@{
+
+   
+
+    var curItem = Model.CurMenuItem;
+    var selectedMenuItems = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+    while (curItem != null)
+    {
+        selectedMenuItems.Add(curItem.ModuleMenu.RouteName);
+        curItem = curItem.Parent;
+    }
+
+    <ul class="navbar-nav">
+                @foreach (var m in Model.Menu.Items.Where(x => x.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal).OrderBy(x => x.ModuleMenu.NativeMenuLink.Weight))
+        {
+            if (m.IsNotEmpty || m.FindFirstChildAction(Model.RequestContext) != null)
+            {
+                if (await m.ModuleMenu.NativeMenuLink.EnabledFunc(Model.RequestContext))
+                {
+                var url = "#";
+                var hasChildren = (m.Childs != null && m.Childs.Any(child => child.ModuleMenu != null && child.ModuleMenu.NativeMenuLink.MenuType == MenuType.Normal));
+                    @if (hasChildren) {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link arrow-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if (!string.IsNullOrEmpty(m.ModuleMenu.NativeMenuLink.IconCssClass))
+                            {
+                                <i class="@m.ModuleMenu.NativeMenuLink.IconCssClass"></i>
+                            }
+                            @m.Text <div class="arrow-down"></div>
+                            </a>
+                            @{await Render(m.Childs, 1, selectedMenuItems);}
+                        </li>
+                        }else{
+                        url = Html.YodaAction(m.ModuleMenu.ModuleName, m.ModuleMenu.NativeMenuLink.Name, new RouteValueDictionary(m.ModuleMenu.NativeMenuLink.RawQueryDefaultParams));
+                            <li class="nav-item">
+
+                                <a class="nav-link arrow-none" href="@url" role="button" aria-haspopup="true" aria-expanded="false">
+                                    @if (!string.IsNullOrEmpty(m.ModuleMenu.NativeMenuLink.IconCssClass))
+                                {
+                                        <i class="@m.ModuleMenu.NativeMenuLink.IconCssClass"></i>
+                                }
+                                    @m.Text
+                                </a>
+                            </li>
+                        }
+            }
+        }
+        }
+    </ul>
+
+    if (Model != null && Model.Menu != null)
+    {
+        await Render(Model.Menu.Items, 0, selectedMenuItems);
+    }
+}

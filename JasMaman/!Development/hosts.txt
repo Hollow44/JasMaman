@@ -1,0 +1,14 @@
+﻿# Пожалуйста, поддерживайте меня в актуальном состоянии.
+# start ==> JasMaman
+
+127.0.0.1 internal.test.me
+127.0.0.1 cabinet.test.me
+127.0.0.1 ar.test.me
+127.0.0.1 cabinet-user-data.test.me
+127.0.0.1 cabinet-org-contacts.test.me
+127.0.0.1 jas-maman.test.me
+127.0.0.1 jas-maman-university.test.me
+127.0.0.1 jas-maman-internal.test.me
+127.0.0.1 jas-maman-moderator.test.me
+
+# end of ==> JasMaman

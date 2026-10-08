@@ -1,0 +1,102 @@
+.items-editor-table-wrapper{
+    overflow: auto;
+    border-radius: 2px;
+    border: 0.5px solid #e2e2e2;
+}
+
+.editor-factory-btn {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.editor-factory-btn.remove-item {
+    color: red;
+}
+.editor-factory-btn.add-item, .editor-factory-btn.add-items {
+    margin-bottom: 3px;
+}
+
+.editor-factory-btn.remove-item, .editor-factory-btn.edit-item {
+    font-size: 16px;
+}
+
+.items-editor-table {
+    width: 100%;
+}
+.items-editor-table td {
+    padding: 3px;
+}
+.items-editor-table-actions-th {
+    width: 80px;
+}
+
+.items-editor-table-now-rows {
+    text-align: center;
+    font-style: italic;
+}
+
+.items-editor-table-btn-add, .items-editor-table-btn-add-items {
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #549c2f;
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+}
+.items-editor-table-btn-add, .items-editor-table-btn-add-items:hover {opacity:0.8}
+
+.items-editor-table-btn-edit {
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #004bbb;
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+}
+.items-editor-table-btn-edit:hover {opacity:0.8}
+
+.items-editor-table-btn-remove, .items-editor-table-btn-remove-all {
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #D60303;
+    color: white;
+    margin: 2px;
+    cursor: pointer;
+}
+.items-editor-table-btn-remove, .items-editor-table-btn-remove-all:hover {opacity:0.8}
+
+ul.common-errors {
+    background-color: lightpink;
+}
+ul.common-errors li {
+    color: red;
+}
+
+.prop-error-info {
+    color: red;
+    font-style: italic;
+    font-size: small;
+}
+
+.prop-error select,  .prop-error input {
+    border-color: lightpink;
+}
+
+.validation-error input, .validation-error select {
+    background-color: #FFEDEB !important;
+}
+
+.validation-error input[readonly], .validation-error select[readonly] {
+    background-color: #d8c6c6 !important;
+    
+}
+.validation-error-text {
+    font-style: italic;
+    font-size: small;
+    color: red;
+    display: block;
+    padding: 5px;
+}

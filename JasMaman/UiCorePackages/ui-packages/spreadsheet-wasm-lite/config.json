@@ -1,0 +1,13 @@
+{
+  "require": [
+    "jquery.core",
+    "jquery.ui",
+    "bootstrap",
+    "react-js"
+  ],
+  "requireInternal": {
+    "grid/spreadsheet-grid.compiled.js": [
+      "vendor/pako.min.js"
+    ]
+  }
+}

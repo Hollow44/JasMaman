@@ -1,0 +1,34 @@
+﻿.rca-item {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.rca-item-child {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.rca-reference-selector .childs {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.rca-reference-selector .childs::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(255 255 255 / 0%);
+}
+
+.rca-reference-selector .childs::-webkit-scrollbar-thumb {
+    background-color: rgb(41 62 89 / 68%);
+    border-radius: 0.15rem;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

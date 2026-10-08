@@ -1,0 +1,13 @@
+﻿.custom-object-list-editor {
+    border: 1px solid #b9b9b9;
+    padding: 5px;
+}
+
+.empty-item {
+    /* font-style: italic; */
+    color: gray;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

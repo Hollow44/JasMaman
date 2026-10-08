@@ -1,0 +1,389 @@
+﻿@using Yoda.Application.Helpers
+@using Yoda.Interfaces
+@using Yoda.Application.Models
+@using Microsoft.AspNetCore.Hosting;
+@using UsersResources;
+@using Yoda.Localization;
+@using Microsoft.Extensions.Hosting;
+@using Humanizer;
+@using Yoda.Controllers;
+@using YodaApp.Yoda.Application.Notifications;
+@using Microsoft.Extensions.DependencyInjection;
+@inject INotificationsApiClientFactory notificationsApiClientFactory;
+@model Yoda.Application.Models.YodaRenderData
+@inject YodaApp.Yoda.Application.Avatars.IAvatarApiClientFactory avatarClient;
+
+@{
+    var rootDir = Url.Content("~/") + Model.CurrentLanguage + "/";
+    var filesRootDir = Url.Content("~/");
+    var dbMode = Model.RequestContext.AppEnv.HostEnvironment;
+    var showProductionEnvWarning = Model.ShowProductionEnvironmentWarning;
+    string T(LocalizableText text)
+    {
+        var langTranslator = Model.RequestContext.LangTranslator;
+        return langTranslator.Translate(text, Model.CurrentLanguage, "view");
+    }
+    var notificationsApiClient = await notificationsApiClientFactory.CreateClient();
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Theme/ui-packages/project-theme/logo/tab-icon.svg" />
+
+    @foreach (var cssFile in Model.StyleSheetFiles)
+    {
+        using (new ConditionalCommentWrapper(Html, cssFile.ConditionalComment))
+        {
+            <link type="text/css" rel="stylesheet" href="@cssFile.File?v=@cssFile.Hash" />
+        }
+    }
+
+    <script type="text/javascript">
+        var rootDir = "@rootDir";
+    </script>
+
+
+
+</head>
+
+<body class="project-@Model.Project.ToLower() @Model.Module.ToLower()_@Model.Method.ToLower() loading" data-layout-config='{"leftSideBarTheme":"light","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": false}' data-leftbar-theme='dark'>
+
+    @if (dbMode.IsDevelopment())
+    {
+        <div class="connection-type-label bg-success py-1 px-2 text-white font-12">Тестовая база</div>
+    }
+    else if (dbMode.IsStaging())
+    {
+        <div class="connection-type-label bg-success py-1 px-2 text-white font-12">ДЕМО-база</div>
+    }
+    else if (dbMode.IsProduction())
+    {
+        if (showProductionEnvWarning)
+        {
+            <div class="connection-type-label bg-danger py-1 px-2 text-white font-12">Рабочая база</div>
+        }
+    }
+    else
+    {
+        <div class="connection-type-label bg-success py-1 px-2 text-white font-12">Текущее окружение: @dbMode.EnvironmentName</div>
+    }
+
+    @if (Context.Items.ContainsKey("sysHealthMessages"))
+    {
+        <div class="system-health-messages" style="padding:15px;">
+            @foreach (var msg in (HealthDiagnosticMessage[])Context.Items["sysHealthMessages"])
+            {
+                <p class="system-health-message message-type-@msg.Type.ToString().ToLower()" style="font-size:16px; color:red">
+                    @msg.Message
+                </p>
+            }
+        </div>
+    }
+
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <!-- LOGO -->
+            <a class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <span class="menu-logo-container">
+                        <span class="menu-logo logo-template-light"></span>
+                    </span>
+                </span>
+                <span class="logo-sm">
+                    <span class="menu-logo-sm logo-template-light-sm"></span>
+                </span>
+            </a>
+
+            <!-- LOGO DARK THEME -->
+            <a class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <span class="menu-logo-container">
+                        <span class="menu-logo logo-template-dark"></span>
+                    </span>
+                </span>
+                <span class="logo-sm">
+                    <span class="menu-logo-sm logo-template-dark-sm"></span>
+                </span>
+            </a>
+
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
+                <!--- Sidemenu -->
+                @{
+                    var menuBlockModel = new MenuInfo
+            {
+                Menu = Model.Menu,
+                CurrentModuleName = Model.Module,
+                CurrentMenuName = Model.Method,
+                RequestContext = Model.RequestContext,
+                CurMenuItem = Model.Breadcrumb.MenuItem
+            };
+                    await Html.RenderPartialAsync("MenuSidebarBlock", menuBlockModel);
+                }
+
+              
+                <!-- QR Box -->
+                <div class="help-box text-center">
+                    <div class="qr-project qr-project-img-template rounded"></div>
+                    <div class="pt-2">Telegram группа<br /><a href="#" target="_blank"><i class="uil uil-at"></i><b>ProjectName</b></a></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Mobile Navbar Start -->
+        @{
+            await Html.RenderPartialAsync("MenuMobile", Model);
+        }
+        <!-- Mobile Navbar END -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+        <!-- MobileTopbar Start -->
+        <div class="mobile-topbar-container mb-2">
+            <div class="mobile-topbar">
+
+                <div class="btn-go-back" id="gobackbtn" type="button" value="go-back" onclick="history.back(1)"><i class="dripicons-chevron-left"></i></div>
+                <script>
+                    if (history.length = 0) {
+                        document.getElementById('gobackbtn').style.display = 'none';
+                    };
+                </script>
+                <span class="mobile-topbar-logo logo-template-dark"></span>
+                @{
+                    var projectsOverviewUrl = Model.RequestContext.Configuration["projectsOverviewUrl"] ?? Model.RequestContext.YodaActionUrl("CabinetStartPageModule", "CabinetStartPage");
+                }
+                <a class="btn-go-startsite text-dark" id="goqoldaubtn" type="button" href="@( Model.RequestContext.User.IsAuthentificated ? projectsOverviewUrl : "https://template.kz/" )"><i class="dripicons-cross"></i></a>
+
+
+            </div>
+            <div class="page-title h5 mx-2 my-3">
+                @ViewData.Model.Title
+            </div>
+        </div>
+
+        <!-- MobileTopbar END -->
+        <!-- Topbar Start -->
+        <!-- LOGO MOBILE -->
+        <div class="navbar-custom">
+            <div class="menu-logo-text d-block d-md-none">
+                <span class="logo-template-dark-text h-100 d-flex align-items-center"></span>
+            </div>
+        <!-- END LOGO MOBILE -->
+            <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                <li class="dropdown notification-list topbar-dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <span class="align-middle d-sm-inline-block">@Model.SupportedLanguages.FirstOrDefault(x => x.Lang == Model.CurrentLanguage)?.Text</span> <i class="dripicons-chevron-down  d-sm-inline-block align-middle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu">
+                        @foreach (var language in Model.SupportedLanguages)
+                        {
+                            if (language.Lang.EqualsIgnoreCase(Model.CurrentLanguage))
+                            {
+                                continue;
+                            }
+                            <a href="@LanguagesChangeHelpers.GetChangeLanguageUrl((HtmlHelper)Html, Model.Module, Model.Method, language.Lang)" class="dropdown-item notify-item">
+                                <span class="align-middle">@language.Text</span>
+                            </a>
+                        }
+                    </div>
+                </li>
+
+
+                @{
+                    var user = Model.RequestContext.User;
+                    if (user.IsAuthentificated)
+                    {
+                        var bin = user.GetUserBin(Model.RequestContext.QueryExecuter);
+                        var fio = user.GetUserShortName(Model.RequestContext.QueryExecuter);
+                        var iin = user.GetUserIin(Model.RequestContext.QueryExecuter);
+                        var userProfileUrl = "#";
+                        if (string.IsNullOrEmpty(Model.RequestContext.Configuration["AuthenticationEndpoint"]))
+                        {
+                            if (user.IsExternalUser())
+                            {
+                                userProfileUrl = Url.YodaAction("ExternalRegistrationModule", "MnuUserProfileRedirect");
+                            }
+                            else
+                            {
+                                userProfileUrl = Url.YodaAction("InternalRegistrationModule", "EditUserInternalSelfData");
+                            }
+                        }
+                        var signOutUrl = Url.YodaAction("UsersCommonFuncModule", "LogOut");
+
+                       // var projectsOverviewUrl = Model.RequestContext.Configuration["projectsOverviewUrl"];
+                        <li class="notification-list pl-1 pr-1 text-center">
+                            <a class="nav-link" href="@projectsOverviewUrl" aria-haspopup="false" aria-expanded="false" style="bottom: 4px;">
+                                <i class="dripicons-view-apps noti-icon  font-24 text-muted"></i>
+                            </a>
+                            <a href="@projectsOverviewUrl" style="top: -25px; position: relative;" class="font-12 text-dark text-muted">@T("Сервисы")</a>
+                        </li>
+
+                        var notificationsUrl = Model.RequestContext.Configuration["notificationsUrl"];
+                        <li class="notification-list pl-1 pr-1 text-center">
+                            <a class="nav-link" href="@notificationsUrl" aria-haspopup="false" aria-expanded="false" style="bottom: 4px;">
+                                <i class="dripicons-bell noti-icon text-muted"></i>
+                                @{
+                                    var unreadNotificationsCount = await notificationsApiClient.GetUnReadCountAsync(user.Name);
+                                    if (unreadNotificationsCount > 0)
+                                    {
+                                        <span id="notification-bell-badge" class="badge badge-danger-lighten" style=" position: absolute; top: 20px; left: 30px; border-radius: 4px; font-size: 10px; background: red; color: white; ">@unreadNotificationsCount</span>
+                                    }
+                                }
+                            </a>
+                            <a href="@notificationsUrl" style="top: -25px; position: relative;" class="font-12 text-dark text-muted">@T("Уведомления")</a>
+                        </li>
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                           aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="@avatarClient.GetAvatarUrl(iin)" class="rounded-circle avatar-default"></img>
+                                </span>
+                                <span>
+                                    <span class="account-user-name">@fio</span>
+                                    @{
+                                        if (!string.IsNullOrEmpty(bin))
+                                        {
+                                            <span class="account-position">@bin</span>
+                                        }
+                                    }
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Добро пожаловать !</h6>
+                                </div>
+                                @{
+                                    var contextMenuItemsServices = Context.RequestServices.GetRequiredService<IEnumerable<Yoda.IUserContextMenuItems>>();
+                                    var contextMenuItemList = contextMenuItemsServices
+                                    .SelectMany(x => x.GetUserContextMenuItems(Model.RequestContext));
+
+                                    foreach (var cm in contextMenuItemList)
+                                    {
+                                        <a href="@cm.Url" class="dropdown-item notify-item">
+                                            <i class="@cm.IconClassName"></i>
+                                            <span>@cm.Text</span>
+                                        </a>
+                                    }
+                                }
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown notification-list topbar-dropdown">
+                            <a class="nav-link " href="@Url.YodaAction("UsersCommonFuncModule", "Challenge")" aria-haspopup="false" aria-expanded="false">
+                                <span class="align-middled-sm-inline-block">Войти</span>
+                            </a>
+                        </li>
+                    }
+                }
+
+            </ul>
+            <button class="button-menu-mobile open-left disable-btn">
+                <i class="mdi mdi-menu"></i>
+            </button>
+        </div>
+        <!-- end Topbar -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page px-0 px-lg-2" id="content-page-mobile">
+            <div class="content">
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box mb-2">
+                                <div class="page-title-right">
+                                    @{
+                                        await Html.RenderPartialAsync("Breadcrumb", Model.Breadcrumb);
+                                    }
+                                </div>
+                                <h4 class="page-title">
+                                    @ViewData.Model.Title
+                                </h4>
+                                @{
+                                    await Html.RenderPartialAsync("LocalTasks", Model.LocalTasksArea);
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    @if (Model.LocalTasksArea.MenuLocalTasks.Length > 0)
+                    {
+                        await Html.RenderPartialAsync("MenuLocalTasks", Model.LocalTasksArea);
+                    }
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            @if (!string.IsNullOrEmpty(TempData["PostbackMessage"] + string.Empty))
+                            {
+                                <div class="alert alert-info bg-white text-info" role="alert" id="postback-message">@(TempData["PostbackMessage"] + string.Empty)</div>
+                            }
+
+                            @{
+                                await Html.RenderPartialAsync("MainContent");
+                            }
+                        </div> <!-- end col -->
+                    </div>
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- content -->
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-uppercase">
+                            1993 - <script>document.write(new Date().getFullYear())</script> © 
+                            <script>
+                                var hostSplit = location.host.split(".");
+                                document.write(([hostSplit[hostSplit.length - 2], hostSplit[hostSplit.length - 1]].join('.')).toUpperCase())
+                            </script>
+                        </div>
+                        <div class="col-md-6">
+                            <!--
+                            <div class="text-md-right footer-links d-none d-md-block">
+                                <a target="_blank" href="">Контакты</a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+            <div id="perf" class="d-none">@Model.Stopwatch.ElapsedMilliseconds</div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    @foreach (var jsFile in Model.JsFiles)
+    {
+        using (new ConditionalCommentWrapper(Html, jsFile.ConditionalComment))
+        {
+            <script src="@jsFile.File?v=@jsFile.Hash" type="text/javascript"></script>
+        }
+    }
+</body>
+</html>

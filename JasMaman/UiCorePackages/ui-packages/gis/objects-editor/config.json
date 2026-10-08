@@ -1,0 +1,3 @@
+﻿{ 
+	Require: [ "editors.factory", "gis.controls" ]
+}

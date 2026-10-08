@@ -1,0 +1,12 @@
+.state-icon {
+    margin-left: -5px;
+    margin-right: 5px;
+}
+
+.list-group-item-selectable {
+    cursor:pointer;
+}
+.no-rows-item {
+    text-align:center;
+    color:gray;
+}

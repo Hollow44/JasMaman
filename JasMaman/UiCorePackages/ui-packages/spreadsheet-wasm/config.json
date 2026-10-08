@@ -1,0 +1,13 @@
+{
+  "require": [
+    "spreadsheet-wasm-lite"
+  ],
+  "requireInternal": {
+    "wasm/uno-bootstrap.js": [
+      "wasm/dotnet-config.js"
+    ],
+    "wasm/dotnet.js": [
+      "wasm/uno-bootstrap.js"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+@using Yoda.Application.Helpers
+@using Yoda.Interfaces
+@using Yoda.Application.Models
+@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.Extensions.Hosting;
+@using Yoda.Controllers;
+@using Microsoft.Extensions.DependencyInjection;
+@model Yoda.Application.Models.YodaRenderData
+
+@{
+    var rootDir = Url.Content("~/") + Model.CurrentLanguage + "/";
+    var showProductionEnvWarning = Model.ShowProductionEnvironmentWarning;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    @foreach (var cssFile in Model.StyleSheetFiles)
+    {
+        using (new ConditionalCommentWrapper(Html, cssFile.ConditionalComment))
+        {
+            <link type="text/css" rel="stylesheet" href="@cssFile.File?v=@cssFile.Hash" />
+        }
+    }
+
+    <script type="text/javascript">
+        var rootDir = "@rootDir";
+    </script>
+
+</head>
+
+<body style='min-height: 100% !important; background-color: #ffffff00 !important;'>
+
+    <!-- Begin page -->
+    @{
+        await Html.RenderPartialAsync("MainContent");
+    }
+    <!-- End page -->
+
+    @foreach (var jsFile in Model.JsFiles)
+    {
+        using (new ConditionalCommentWrapper(Html, jsFile.ConditionalComment))
+        {
+            <script src="@jsFile.File?v=@jsFile.Hash" type="text/javascript"></script>
+        }
+    }
+
+</body>
+</html>

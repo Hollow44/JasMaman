@@ -1,0 +1,65 @@
+﻿#yoda-map {
+    width: 100%;
+    height: calc(100% - 70px);
+    position: absolute;
+}
+
+.ol-widget {
+    position: absolute;
+    z-index: 1;
+}
+
+.ol-control-widget {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 0.95rem !important;
+}
+
+.ol-control-btn {
+    padding: 2px 8px;
+    font-weight: bold;
+    width: 32px;
+}
+
+.ol-hover-data-widget {
+    border-radius: 0.25rem;
+    background-color: #f4f6fb;
+    color: #2c343f;
+    padding: 15px;
+}
+
+.ol-hover-data-widget-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 13px;
+}
+
+.ol-hover-data-widget-close-icon {
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0.95rem;
+    margin-right: 0.95rem;
+}
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0.95rem;
+    margin-left: 0.95rem;
+}
+.top-right {
+    top: 0;
+    right: 0;
+    margin-top: 0.95rem;
+    margin-right: 0.95rem;
+}
+.top-left {
+    top: 0;
+    left: 0;
+    margin-top: 0.95rem;
+    margin-left: 0.95rem;
+}

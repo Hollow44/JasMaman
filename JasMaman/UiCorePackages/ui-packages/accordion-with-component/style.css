@@ -1,0 +1,46 @@
+﻿.accordion-with-component .card {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0.5rem !important;
+}
+
+.accordion-with-component .card .header-title {
+    text-transform: none;
+}
+
+.accordion-with-component .card .header-title .title {
+    text-transform: uppercase;
+}
+
+.accordion-with-component .card-header {
+    background-color: #f1f3fa !important
+}
+
+.accordion-with-component .card-body {
+    border: 1px solid #f1f3fa !important;
+    border-bottom-left-radius: 0.5rem !important;
+    border-bottom-right-radius: 0.5rem !important;
+}
+
+.accordion-with-component .accordion-arrow {
+    font-size: 1.2rem !important;
+    position: absolute !important;
+    right: 0 !important;
+}
+
+.accordion-with-component a.collapsed i.accordion-arrow:before {
+    content: "\F0140" !important;
+}
+
+.accordion-with-component-title {
+    color: #313a46 !important;
+    position: relative !important;
+}
+
+    .accordion-with-component-title:hover {
+        color: #414d5d !important;
+    }
+
+.accordion-with-component .card-body > .accordion-with-component:last-child > .card {
+    margin-bottom: 0px !important;
+}

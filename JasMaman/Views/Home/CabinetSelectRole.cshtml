@@ -1,0 +1,101 @@
+﻿@using Yoda.Application.Helpers
+@using Yoda.Interfaces
+@using Yoda.Application.Models
+@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.AspNetCore.Html;
+@using UsersResources;
+@using Yoda.Localization;
+@using Microsoft.Extensions.Hosting;
+
+@model Yoda.Application.Models.YodaRenderData
+
+@{
+    var rootDir = Url.Content("~/") + Model.CurrentLanguage + "/";
+    var filesRootDir = Url.Content("~/");
+    var dbMode = Model.RequestContext.AppEnv.HostEnvironment;
+    var showProductionEnvWarning = Model.ShowProductionEnvironmentWarning;
+    string T(LocalizableText text) {
+        var langTranslator = Model.RequestContext.LangTranslator;
+        return langTranslator.Translate(text, Model.CurrentLanguage, "view");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Theme/ui-packages/project-theme/logo/tab-icon.svg" />
+
+    @foreach (var cssFile in Model.StyleSheetFiles) {
+        using (new ConditionalCommentWrapper(Html, cssFile.ConditionalComment)) {
+            <link type="text/css" rel="stylesheet" href="@cssFile.File?v=@cssFile.Hash" />
+        }
+    }
+
+    <script type="text/javascript">
+        var rootDir = "@rootDir";
+    </script>
+
+
+</head>
+
+<body class="project-@Model.Project.ToLower() @Model.Module.ToLower()_@Model.Method.ToLower() loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}' data-leftbar-theme='dark'>
+
+    @if (dbMode.IsDevelopment()) {
+        <div class="connection-type-label bg-success px-2 text-white">Тестовая база</div>
+    }
+    else if (dbMode.IsStaging()) {
+        <div class="connection-type-label bg-success px-2 text-white">ДЕМО-база</div>
+    }
+    else if (dbMode.IsProduction()) {
+        if (showProductionEnvWarning) {
+            <div class="connection-type-label bg-danger px-2 text-white">Рабочая база</div>
+        }
+    }
+    else {
+        <div class="connection-type-label bg-success px-2 text-white">Текущее окружение: @dbMode.EnvironmentName</div>
+    }
+
+    @if (Context.Items.ContainsKey("sysHealthMessages")) {
+        <div class="system-health-messages" style="padding:15px;">
+            @foreach (var msg in (HealthDiagnosticMessage[])Context.Items["sysHealthMessages"]) {
+                <p class="system-health-message message-type-@msg.Type.ToString().ToLower()" style="font-size:18px; color:red">
+                    @msg.Message
+                </p>
+            }
+        </div>
+    }
+
+    <!-- Begin page -->
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="reg-card-container rounded p-0 bg-white">
+                        @if (!string.IsNullOrEmpty(TempData["PostbackMessage"] + string.Empty)) {
+                            <div class="alert alert-info bg-white text-info" role="alert" id="postback-message">@(TempData["PostbackMessage"] + string.Empty)</div>
+                        }
+
+                        @{ await Html.RenderPartialAsync("MainContent"); }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="footer footer-alt">
+        1993 -
+        <script>document.write(new Date().getFullYear())</script> © Разработчик АО “Информационно-учетный центр”
+    </footer>
+    <!-- end Footer -->
+
+    @foreach (var jsFile in Model.JsFiles) {
+        using (new ConditionalCommentWrapper(Html, jsFile.ConditionalComment)) {
+            <script src="@jsFile.File?v=@jsFile.Hash" type="text/javascript"></script>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,79 @@
+// 
+// buttons.scss
+//
+
+.btn {
+    .mdi {
+        &:before {
+            line-height: initial;
+        }
+    } 
+}
+
+.btn {
+    min-height: 32px;
+    padding: .4rem .9rem;
+    line-height: 1.2;
+}
+
+.btn-lg {
+    min-height: 40px;
+    padding: .45rem .9rem;
+    line-height: 1.5;
+}
+
+.btn-sm {
+    min-height: 24px;
+    padding: .3rem .9rem;
+    line-height: 1;
+}
+
+.btn-rounded {
+    border-radius: 2em;
+}
+
+.btn-ghost {
+    border-style: none;
+    background: none;
+    color: $primary;
+}
+.btn-ghost:hover {
+    background: #e5f1f8;
+}
+
+.btn-ghost:hover, .btn-ghost:focus {
+    color: $primary !important;
+}
+
+.btn-outline-light {
+    border-color: rgba(124, 183, 216, 1);
+    color: rgba(124, 183, 216, 1);
+}
+
+.btn-outline-light:hover {
+    color:rgba(124, 183, 216, 1) !important;
+}
+
+.btn-warning, .btn-warning:hover,  .btn-warning:focus {
+    color: #ffffff;
+}
+
+.btn-light, .btn-light:focus  {
+    color: $primary !important;
+}
+
+.btn-light:hover {
+    color: #ffffff !important;
+    background-color: rgba(124, 183, 216, 1) !important;
+    border-color: rgba(124, 183, 216, 1)!important;
+}
+
+
+
+
+// Button Shadows
+// @each $color, $value in $theme-colors {
+//     .btn-#{$color} {
+//         @include button-shadow($value);
+//     }
+// }

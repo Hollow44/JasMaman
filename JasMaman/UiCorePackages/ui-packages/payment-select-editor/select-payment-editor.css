@@ -1,0 +1,32 @@
+.payments-select-editor {
+    /*padding: 10px;
+    border: 1px solid rgb(219, 219, 219);*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.payments-select-editor-title {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.select-payments-btn {
+    margin-bottom: 5px;
+}
+.payments-select-editor .payment-amount{
+    font-size: 16px;
+}
+
+
+.select-payments-panel .payment-item {
+    cursor: pointer;
+}
+.select-payments-panel .payment-item.selected {
+    /*//background: #d1f3e2;*/
+}
+
+.select-payments-panel .payment-item:hover {
+    background: #f3f3f3;
+}

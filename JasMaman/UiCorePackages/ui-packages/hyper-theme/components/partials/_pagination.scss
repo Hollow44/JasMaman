@@ -1,0 +1,39 @@
+// 
+// pagination.scss
+//
+
+// Pagination rounded (Custom)
+.pagination-rounded {
+  .page-link {
+    border-radius: 30px !important;
+    margin: 0 5px;
+    border: none;
+    line-height: 1.25;;
+  }
+}
+
+.page-link {
+  padding: .4rem .75rem;
+  line-height: 1.2;
+  min-height: 32px;
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: $rounded;
+  border-bottom-left-radius: $rounded;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: $rounded;
+  border-bottom-right-radius: $rounded;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+  border-top-left-radius: $rounded-lg;
+  border-bottom-left-radius: $rounded-lg;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+  border-top-right-radius: $rounded-lg;
+  border-bottom-right-radius: $rounded-lg;
+}

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+            <p>Для полноценного запуска проекта необходимо:</p>
+            <ul>
+                <li>
+                    Настроить базу данных
+                    <ol>
+                        <li>Поднять в Docker контейнер postgres: <code>docker run --name {containerName} -p {port}:5432 -e POSTGRES_PASSWORD={password} -e POSTGRES_HOST_AUTH_METHOD=password -d postgis/postgis</code></li>
+                        <li>Пароль и порт должны совпадать с данными введеными при создании проекта</li>
+                        <li>Создать там бд (которую указывали при создание проекта)</li>
+                        <li>Проверить конфиги подключения к бд (appsettings.dbkeys.Development.json)</li>
+                    </ol>
+                </li>
+
+                <li>
+                    Настроить локальный SMTP сервер (почтовик)
+                    <ol>
+                        <li>Поднять в Docker контейнер smtp сервера: <code>docker run -p 3000:80 -p 2525:25 rnwood/smtp4dev:v3</code></li>
+                        <li>Проверить конфиги подключения к smtp серверу (appsettings.core.json (DefaultEmailSettings))</li>
+                    </ol>
+                </li>
+
+                <li>
+                    Настроить host файл
+                    <ol>
+                        <li>Скопировать содержимое !Development\hosts.txt в ваш хост файл (в Windows это C:\Windows\System32\drivers\etc\hosts)</li>
+                    </ol>
+                </li>
+            </ul>
+
+            <a href="https://gitlab.servers.lan/core/yoda-app/-/wikis/%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-yoda-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">Подробнее тут</a>
+        </div>
+    </body>
+</html>

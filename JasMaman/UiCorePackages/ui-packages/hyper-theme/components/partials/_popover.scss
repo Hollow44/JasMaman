@@ -1,0 +1,13 @@
+// 
+// popover.scss
+//
+
+.popover-header {
+    margin-top: 0;
+    border-top-left-radius: calc(.625rem - 1px);
+    border-top-right-radius: calc(.625rem - 1px);
+}
+
+.popover {
+    border-radius: .625rem;
+}

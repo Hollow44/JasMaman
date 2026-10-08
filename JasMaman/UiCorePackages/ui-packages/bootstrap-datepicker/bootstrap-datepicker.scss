@@ -1,0 +1,11 @@
+@import "variables";
+
+@import "partials/bootstrap-datepicker.min.scss";
+
+
+.datepicker-days .datepicker-switch {
+    font-weight: 600;
+}
+.datepicker-days th.dow {
+    font-weight: 600;
+}

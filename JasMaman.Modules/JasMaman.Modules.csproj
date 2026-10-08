@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="EPPlus" Version="7.5.3" />
+		<PackageReference Include="Humanizer" Version="2.14.1" />
+		<PackageReference Include="OpAbstractions.SourceGenerator" Version="1.0.0" />
+		<PackageReference Include="OpPatternAbstractions" Version="8.0.5-beta" />
+		<PackageReference Include="WalletApi.Client" Version="2.0.1-beta" />
+		<PackageReference Include="YodaApp" Version="8.0.20-beta" />
+		<PackageReference Include="YodaQuery" Version="8.0.2-beta" />
+		<PackageReference Include="YodaCorePlugin" Version="8.0.9-beta" />
+		<PackageReference Include="Yoda.Analytics" Version="1.0.32" />
+		<PackageReference Include="Razor.Templating.Core" Version="2.1.0" />
+	</ItemGroup>
+  <ItemGroup>
+    <Using Include="Yoda.Interfaces" />
+    <Using Include="Yoda.Interfaces.Forms" />
+    <Using Include="Yoda.Interfaces.Forms.Components" />
+    <Using Include="Yoda.Application" />
+    <Using Include="YodaApp" />
+    <Using Include="YodaQuery" />
+    <Using Include="YodaApp.Ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JasMaman.FcMigrator\JasMaman.FcMigrator.csproj" />
+  </ItemGroup>
+
+</Project>
+

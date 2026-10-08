@@ -1,0 +1,15 @@
+﻿.custom-switch-warn:before {
+    color: #ffbc00 !important;
+    border-color: #ffbc00 !important;
+    background-color: #ffbc00 !important;
+}
+.dripicons-plus:before {
+    content: "\e035";
+    margin-right: 3px;
+    cursor: pointer;
+}
+.dripicons-minus:before {
+    content: "\e024";
+    margin-right: 3px;
+    cursor: pointer;
+}

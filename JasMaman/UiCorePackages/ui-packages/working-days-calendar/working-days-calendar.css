@@ -1,0 +1,17 @@
+﻿.working-days-calendar .ui-state-highlight {
+	background: #990000;
+}
+
+.working-days-calendar .ui-state-highlight a {
+	background: #990000;
+	color: white !important;
+}
+
+.working-days-calendar .ui-datepicker-today .ui-state-highlight {
+	background: lightblue;
+	color: black;
+}
+
+.working-days-calendar-cur-year-title {
+	font-size: larger;
+}

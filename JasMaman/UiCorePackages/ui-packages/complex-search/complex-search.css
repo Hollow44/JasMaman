@@ -1,0 +1,648 @@
+﻿.cs-query-name-error {
+    border: 1px solid red;
+}
+
+.cs-query-save, .cs-query-save-as, .cs-query-remove, .cs-remove-saved-query {
+    background: url("images/save-small.gif") no-repeat left;
+    padding: 9px;
+    cursor: pointer;
+    background-position: center center;
+    margin-left: 3px;
+}
+.cs-query-save-as {
+    background: url("images/save-as-small.png") no-repeat left;
+}
+
+.cs-query-remove, .cs-remove-saved-query {
+    background: url("images/delete-small.png") no-repeat right;
+    padding: 8px;
+}
+.cs-remove-saved-query {
+    margin-left: 0px;
+    margin-right: 4px;
+}
+
+.cs-new-query-active {
+    background: lightcyan;
+    border: 1px solid;
+}
+
+/* $layout */
+.cs-complex-search-editor {
+    width: 100%;
+}
+
+.cs-query-items-toolbox {
+    width: 200px;
+    border: 1px dotted gray;
+    padding: 4px;
+    vertical-align: top;
+    
+}
+.cs-query-items-toolbox-inner-wrapper {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 400px;
+}
+.cs-qunits-list-title, .cs-saved-queries-list-title {
+    padding: 4px;
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+}
+.cs-saved-queries-list-title {
+    margin-top: 20px;
+    display: block;
+}
+
+.cs-qunits-list {
+}
+
+.cs-saved-queries-list {
+    margin: 4px;
+    padding: 4px;
+}
+
+.cs-saved-query-item-wrapper {
+    margin: 3px;
+}
+.cs-saved-query-item {
+    cursor: pointer;
+    padding: 4px;
+    width: 180px;
+}
+.cs-saved-query-to-list {
+    background: url("images/arrow_right-small.gif") no-repeat left;
+    padding: 8px;
+    cursor: pointer;
+    background-position: center center;
+}
+
+.cs-no-saved-queries {
+    font-size: 12px;
+    color: gray;
+    font-style: italic;
+}
+.cs-queries-list {
+    width: 250px;
+    border: 1px dotted gray;
+    padding: 4px;
+}
+
+.cs-query-detailed-view {
+    vertical-align: top;
+    border: 1px solid #d6d4d4;
+    padding: 4px;
+    background-color: #ededed;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+.cs-query-action-workarea {
+    
+}
+
+.cs-query-toolbar 
+{
+    padding-left: 5px;
+    height: 25px;
+    margin: 3px;
+    border: 1px dotted gray;
+}
+
+.cs-queries-list {
+    vertical-align: top;
+}
+
+.cs-query-table-title {
+    display: block;
+    margin-right: 5px;
+    margin: 3px;
+    padding: 6px;
+    z-index: 50;
+    position: relative;
+    margin-left: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.cs-query-table-accept-drop-state {
+    color: green;
+    font-weight: bold;
+}
+
+.cs-selected-query-table {
+    display: block;
+    margin-right: -8px;
+    /*background-image: url("images/rounded-corner-right.png");*/
+    background-image: url("images/rounded-corner-right.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.cs-query-table-begin-corner {
+    float: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    z-index: 60;
+    position: relative;
+}
+.cs-query-table-begin-corner.selected-item {
+    background-image: url("images/rounded-corner-left.png");
+    background-position: center center;
+}
+
+
+/* end $layout*/
+
+/* $seletFieldsTree*/
+.cs-select-fields-tree {
+    margin-left: 15px;
+}
+.cs-select-fields-table {
+    
+}
+.cs-select-fields-table-text{}
+.cs-select-fields-fields-container {
+    margin-left: 23px;
+}
+.cs-select-fields-field-wrapper{}
+.cs-select-fields-field-wrapper label {
+    padding-left: 4px;
+}
+.cs-select-fields-joined-tables{}
+/* end $selectFieldsTree*/
+
+.cs-qunit-item {
+    display: block;
+    position: relative;
+    z-index: 120;
+    cursor: pointer;
+    padding: 4px;
+    width: 180px;
+}
+.cs-qunit-item.can-be-root {
+    padding-left: 20px;
+    background-image: url(images/star.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.cs-qunits-list {
+    vertical-align: top;
+}
+.cs-query-convert-to-excel, .cs-query-show-result, .cs-query-group-by, .cs-query-edit-schema
+{
+    background: url("images/excel-small.png") no-repeat left;
+    padding: 12px;
+    cursor: pointer;
+    background-position: center center;
+    padding-top: 3px;
+}
+.cs-query-show-result {
+    background: url("images/refresh-small.png") no-repeat left;
+}
+.cs-query-group-by {
+    background: url("images/top-rows.gif") no-repeat left;
+}
+.cs-query-edit-schema {
+    background: url("images/edit-icon.gif") no-repeat left;
+}
+
+.new-query-container {
+    padding: 10px;
+    font-style: italic;
+    color: gray;
+    border: 1px dotted gray;
+    margin: 4px;
+    margin-bottom: 15px;
+}
+
+.cs-query {
+    margin: 4px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    padding-left: 5px;
+    background: url("images/vertical-bottom-to-top-gradient-line.png") bottom left no-repeat;
+}
+.cs-query-title {
+    font-weight: bold;
+    color: gray;
+    margin-left: 4px;
+}
+
+.cs-sub-query {
+    margin-left: 16px;
+}
+
+.cs-join-condition, .cs-join-type {
+    background: url("images/lock.png") no-repeat left;
+    padding: 8px;
+    cursor: pointer;
+    float: left;
+    margin-top: 5px;
+    padding-left: 10px;
+    position: relative;
+    z-index: 60;
+}
+.cs-join-condition.cs-join-type-left {
+    background: url("images/lock-open.png") no-repeat left;
+}
+.cs-join-type {
+    background: url("images/sort_desc.png") no-repeat left;
+}
+.cs-join-type-item {
+    display: block;
+    cursor: pointer;
+}
+
+.cs-query-actions {
+    padding: 8px;
+}
+.cs-query-filter {
+    background: url("images/filter-small.png") no-repeat left;
+    padding: 12px;
+    cursor: pointer;
+    background-position: center center;
+    padding-top: 3px;
+}
+
+
+.cs-query-result-content-empty, .cs-query-result-section-empty {
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-style: italic;
+    color: gray;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+/* $treeFields */
+.cs-query-tree-tables {
+}
+.cs-query-tree-table {
+    margin-left: 15px;
+}
+.cs-query-tree-fields-container {
+    margin-left: 15px;
+}
+
+.cs-tree-children-collpased, .cs-tree-children-uncollpased
+{
+    padding-left: 16px;
+    background: url("images/collapsed.png") no-repeat left center;
+    margin-left: 15px;
+}
+.cs-tree-children-uncollpased {
+    background: url("images/expanded.png") no-repeat left center;
+}
+
+.cs-tree-container-collpased {
+    display: none;
+}
+.cs-tree-container-uncollpased {
+    display: block;
+}
+
+.cs-query-field-selected {
+    font-weight: bold;
+}
+
+.cs-query-fields-selector {
+    width: 400px;
+    min-height: 250;
+    max-height: 600px;
+}
+
+.cs-query-tree-choose-multiple-fields {
+    width: 400px;
+    min-height: 250;
+    max-height: 600px;
+}
+
+.cs-query-tree-fields-group {
+    
+}
+
+.cs-query-tree-fields-group-title {
+    color: gray;
+    font-weight: bold;
+}
+
+.cs-query-tree-fields-group .cs-query-tree-field {
+    margin-left: 15px;
+}
+
+
+/* end $treeFields*/
+
+
+
+/* $fieldSelector */
+.cs-query-tree-sub-tables-wrapper {
+    padding-left: 8px;
+}
+
+.cs-query-tree-table-text {
+    padding: 2px;
+}
+
+.cs-query-tree-fields-container {
+    margin-left: 30px;
+    border-left: 1px dotted gray;
+    padding: 3px;
+}
+
+.cs-query-fields-selector {
+    min-height: 100px;
+    min-width: 220px;
+    max-height: 500px;
+    max-width: 400px;
+    overflow: auto;
+}
+
+.cs-query-tree-field {
+    display: block;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 200px;
+}
+.cs-query-tree-field:hover {
+    text-decoration: underline;
+}
+/*
+    end $fieldSelector
+*/
+/*
+    $filter-editor
+*/
+
+.cs-conditions-group {
+}
+
+.cs-conditions-group-toolbar {
+    
+}
+.cs-add-condition, .cs-add-conditions-group {
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 12px;
+    background: url(images/add-condition-small.png) no-repeat;
+    position: absolute;
+    margin-top: -2px;
+}
+
+.cs-add-conditions-group {
+    background: url(images/add-conditions-group-small.png) no-repeat;
+    margin-left: 30px;
+}
+
+.cs-sub-conditions-groups {
+    margin-left: 20px;
+    
+}
+
+
+.cs-conditions {
+    margin-left: 20px;
+}
+.cs-condition {
+    padding: 5px;
+}
+.cs-condition-field {
+    cursor: pointer;
+    color: black;
+}
+.cs-condition-op {
+    padding: 4px;
+    cursor: pointer;
+    color: green;
+}
+.cs-condition-value {
+    padding: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cs-condition-value-empty {
+    font-style: italic;
+}
+
+
+.cs-condition-operator-item {
+    display: block;
+    cursor: pointer;
+}
+.cs-condition-operator-item:hover {
+    text-decoration: underline;
+}
+.cs-group-op {
+    cursor: pointer;
+    font-weight: bold;
+    color: green;
+}
+
+.cs-group-op-item {
+    display: block;
+    cursor: pointer;
+}
+
+.cs-group-op-item:hover {
+    text-decoration: underline;
+}
+
+.cs-editor-item {
+    display: block;
+    cursor: pointer;
+}
+
+.cs-item-selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cs-select-condition-editor {
+    cursor: pointer;
+    padding: 12px;
+    background: url(images/value-editor-small.png) no-repeat;
+    position: absolute;
+    margin-top: -2px;
+}
+.cs-remove-condition, .cs-remove-condition-group {
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 12px;
+    background: url(images/delete-small.png) no-repeat;
+    position: absolute;
+    margin-top: -2px;
+}
+.cs-remove-condition-group {
+    margin-left: 53px;
+}
+
+.cs-conditions-group-toolbar {
+    padding: 5px;
+}
+
+/*
+    end $filter-editor
+*/
+
+
+/* $filter-editor-dialog */
+
+.fdialog-wrapper {
+    position: absolute;
+    z-index: 2005;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.fdialog-header 
+{
+    border: 1px solid;
+    color: white;
+    background-color: gray;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.fdialog-content-wrapper {
+    padding: 8px;
+}
+
+.fdialog-buttons {
+    padding: 3px;
+    border-top: 1px solid gray;
+}
+.fdialog-buttons button {
+    margin: 8px;
+    float: right;
+    cursor: pointer;
+}
+.fdialog-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2004;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: gray;
+}
+/* end $filter-editor-dialog */
+
+
+
+
+
+/* */
+.cs-query-group-by-editor-col1, .cs-query-group-by-editor-col2 {
+    width:400px; border:1px dotted gray;vertical-align: top;
+}
+
+.cs-query-group-by {
+    width: 800px;
+}
+
+.cs-query-fields-droppable-list-title {
+    color: gray;
+    font-weight: bold;
+}
+.droppable-sortable-fields-list {
+    padding: 5px;
+    border: 1px dotted gray;
+}
+.cs-empty-item {
+    color: gray;
+    font-style: italic;
+}
+
+.cs-query-item-field-order-type, .cs-remove-field-item{
+    padding: 4px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 3px;
+    cursor: pointer;
+}
+.cs-query-item-field-order-type.cs-order-asc {
+    background-image: url(images/sort_asc.png)
+}
+
+.cs-query-item-field-order-type.cs-order-desc {
+    background-image: url(images/sort_desc.png)
+}
+.cs-remove-field-item {
+    padding: 9px;
+    background-image: url(images/delete-small.png)
+}
+/* */
+
+.cs-must-choose-fields {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}
+
+.cs-group-search-rep-item {
+    margin: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px;
+    border: 1px solid #eaeaea;
+    width: 400px;
+    height: 33px;
+    background-color: #f5f5f5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.rep-item-selected {
+    font-weight: bold;
+}
+
+.cs-group-rep-selected-next {
+    display: inline-block;
+    padding: 5px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cs-group-search-select-main-table-fields, .cs-group-search-select-rep-fields {
+    display: inline-block;
+    padding: 4px;
+    height: 18px;
+    margin-right: 5px;
+    margin-top: 2px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.cs-group-search-select-rep-fields {
+    margin-right: 0px;
+}
+
+
+.cs-group-search-rep-item:hover {
+    border:1px solid #D8D7D7;
+}
+
+.cs-group-search-reports-list {
+    
+}
+
+.cs-group-search-reports-list>div {
+    float: left;
+}

@@ -1,0 +1,6 @@
+{
+  "require": [ "ol6" ]
+  //"requireInternal": {
+  //  "layers.js": [ "map-extensions.js" ]
+  //}
+}

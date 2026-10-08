@@ -1,0 +1,6 @@
+﻿{ 
+	Require: [ "editors.factory" ],
+	RequireInternal: {
+		"gis-edit-control2.js": ["turf.js"]
+	}
+}

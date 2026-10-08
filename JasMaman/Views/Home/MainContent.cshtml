@@ -1,0 +1,8 @@
+﻿ @model Yoda.Application.Models.YodaRenderData
+            
+ @if (string.IsNullOrEmpty(Model.ActionData.PartialViewName)) {
+     @Model.ActionData.Model
+ } else {
+     //ViewData
+     Html.RenderPartial(Model.ActionData.PartialViewName, Model.ActionData.Model);
+ }

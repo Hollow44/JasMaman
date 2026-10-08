@@ -1,0 +1,1214 @@
+{
+  "ct159": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 159
+    }
+  },
+  "ct160": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 160
+    }
+  },
+  "ct170": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 170
+    }
+  },
+  "ct171": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 171
+    }
+  },
+  "ct172": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 172
+    }
+  },
+  "ct174": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 174
+    }
+  },
+  "ct175": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 175
+    }
+  },
+  "ct177": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 177
+    }
+  },
+  "ct178": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 178
+    }
+  },
+  "ct179": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 179
+    }
+  },
+  "ct180": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 180
+    }
+  },
+  "ct181": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 181
+    }
+  },
+  "ct182": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 182
+    }
+  },
+  "ct183": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 183
+    }
+  },
+  "ct184": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 184
+    }
+  },
+  "ct228": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 228
+    }
+  },
+  "ct203": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 203
+    }
+  },
+  "ct209": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 209
+    }
+  },
+  "ct210": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 210
+    }
+  },
+  "ct214": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 214
+    }
+  },
+  "ct217": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 217
+    }
+  },
+  "ct222": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 222
+    }
+  },
+  "ct247": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 247
+    }
+  },
+  "ct248": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 248
+    }
+  },
+  "ct267": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 267
+    }
+  },
+  "ct276": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 276
+    }
+  },
+  "ct280": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 280
+    }
+  },
+  "ct288": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 288
+    }
+  },
+  "ct295": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 295
+    }
+  },
+  "ct298": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 298
+    }
+  },
+  "ct301": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 301
+    }
+  },
+  "ct311": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 311
+    }
+  },
+  "ct356": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 356
+    }
+  },
+  "ct357": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 357
+    }
+  },
+  "ct358": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 358
+    }
+  },
+  "ct359": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 359
+    }
+  },
+  "ct547": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 547
+    }
+  },
+  "ct552": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 552
+    }
+  },
+  "ct560": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 560
+    }
+  },
+  "ct561": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 561
+    }
+  },
+  "ct686": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 686
+    }
+  },
+  "ct687": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 687
+    }
+  },
+  "ct688": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 688
+    }
+  },
+  "ct689": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 689
+    }
+  },
+  "ct238": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 238
+    }
+  },
+  "ct312": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 312
+    }
+  },
+  "ct667": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 667
+    }
+  },
+  "ct674": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 674
+    }
+  },
+  "ct675": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 675
+    }
+  },
+  "ct664": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 664
+    }
+  },
+  "ct661": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 661
+    }
+  },
+  "ct673": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 673
+    }
+  },
+  "ct313": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 313
+    }
+  },
+  "ct314": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 314
+    }
+  },
+  "ct315": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 315
+    }
+  },
+  "ct316": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 316
+    }
+  },
+  "ct317": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 317
+    }
+  },
+  "ct318": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 318
+    }
+  },
+  "ct319": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 319
+    }
+  },
+  "ct324": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 324
+    }
+  },
+  "ct325": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 325
+    }
+  },
+  "ct327": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 327
+    }
+  },
+  "ct328": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 328
+    }
+  },
+  "ct329": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 329
+    }
+  },
+  "ct330": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 330
+    }
+  },
+  "ct331": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 331
+    }
+  },
+  "ct332": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 332
+    }
+  },
+  "ct333": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 333
+    }
+  },
+  "ct334": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 334
+    }
+  },
+  "ct335": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 335
+    }
+  },
+  "ct338": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 338
+    }
+  },
+  "ct344": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 344
+    }
+  },
+  "ct345": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 345
+    }
+  },
+  "ct346": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 346
+    }
+  },
+  "ct347": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 347
+    }
+  },
+  "ct348": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 348
+    }
+  },
+  "ct349": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 349
+    }
+  },
+  "ct353": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 353
+    }
+  },
+  "ct360": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 360
+    }
+  },
+  "ct369": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 369
+    }
+  },
+  "ct370": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 370
+    }
+  },
+  "ct373": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 373
+    }
+  },
+  "ct382": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 382
+    }
+  },
+  "ct385": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 385
+    }
+  },
+  "ct386": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 386
+    }
+  },
+  "ct387": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 387
+    }
+  },
+  "ct388": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 388
+    }
+  },
+  "ct390": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 390
+    }
+  },
+  "ct391": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 391
+    }
+  },
+  "ct395": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 395
+    }
+  },
+  "ct408": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 408
+    }
+  },
+  "ct410": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 410
+    }
+  },
+  "ct411": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 411
+    }
+  },
+  "ct419": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 419
+    }
+  },
+  "ct422": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 422
+    }
+  },
+  "ct430": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 430
+    }
+  },
+  "ct431": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 431
+    }
+  },
+  "ct433": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 433
+    }
+  },
+  "ct436": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 436
+    }
+  },
+  "ct437": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 437
+    }
+  },
+  "ct438": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 438
+    }
+  },
+  "ct439": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 439
+    }
+  },
+  "ct446": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 446
+    }
+  },
+  "ct447": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 447
+    }
+  },
+  "ct452": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 452
+    }
+  },
+  "ct454": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 454
+    }
+  },
+  "ct457": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 457
+    }
+  },
+  "ct458": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 458
+    }
+  },
+  "ct459": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 459
+    }
+  },
+  "ct461": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 461
+    }
+  },
+  "ct464": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 464
+    }
+  },
+  "ct471": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 471
+    }
+  },
+  "ct482": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 482
+    }
+  },
+  "ct483": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 483
+    }
+  },
+  "ct486": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 486
+    }
+  },
+  "ct487": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 487
+    }
+  },
+  "ct488": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 488
+    }
+  },
+  "ct489": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 489
+    }
+  },
+  "ct490": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 490
+    }
+  },
+  "ct492": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 492
+    }
+  },
+  "ct498": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 498
+    }
+  },
+  "ct507": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 507
+    }
+  },
+  "ct512": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 512
+    }
+  },
+  "ct513": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 513
+    }
+  },
+  "ct522": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 522
+    }
+  },
+  "ct523": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 523
+    }
+  },
+  "ct524": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 524
+    }
+  },
+  "ct535": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 535
+    }
+  },
+  "ct539": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 539
+    }
+  },
+  "ct542": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 542
+    }
+  },
+  "ct543": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 543
+    }
+  },
+  "ct544": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 544
+    }
+  },
+  "ct545": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 545
+    }
+  },
+  "ct546": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 546
+    }
+  },
+  "ct556": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 556
+    }
+  },
+  "ct557": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 557
+    }
+  },
+  "ct572": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 572
+    }
+  },
+  "ct574": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 574
+    }
+  },
+  "ct582": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 582
+    }
+  },
+  "ct583": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 583
+    }
+  },
+  "ct590": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 590
+    }
+  },
+  "ct591": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 591
+    }
+  },
+  "ct592": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 592
+    }
+  },
+  "ct594": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 594
+    }
+  },
+  "ct596": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 596
+    }
+  },
+  "ct597": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 597
+    }
+  },
+  "ct602": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 602
+    }
+  },
+  "ct606": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 606
+    }
+  },
+  "ct608": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 608
+    }
+  },
+  "ct609": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 609
+    }
+  },
+  "ct610": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 610
+    }
+  },
+  "ct611": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 611
+    }
+  },
+  "ct612": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 612
+    }
+  },
+  "ct613": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 613
+    }
+  },
+  "ct616": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 616
+    }
+  },
+  "ct620": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 620
+    }
+  },
+  "ct623": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 623
+    }
+  },
+  "ct624": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 624
+    }
+  },
+  "ct627": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 627
+    }
+  },
+  "ct630": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 630
+    }
+  },
+  "ct633": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 633
+    }
+  },
+  "ct637": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 637
+    }
+  },
+  "ct638": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 638
+    }
+  },
+  "ct639": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 639
+    }
+  },
+  "ct640": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 640
+    }
+  },
+  "ct649": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 649
+    }
+  },
+  "ct655": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 655
+    }
+  },
+  "ct658": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 658
+    }
+  },
+  "ct690": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 690
+    }
+  },
+  "ct698": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 698
+    }
+  },
+  "ct708": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 708
+    }
+  },
+  "ct725": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 725
+    }
+  },
+  "ct731": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 731
+    }
+  },
+  "ct732": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 732
+    }
+  },
+  "ct733": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 733
+    }
+  },
+  "ct741": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 741
+    }
+  },
+  "ct743": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 743
+    }
+  },
+  "ct744": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 744
+    }
+  },
+  "ct746": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 746
+    }
+  },
+  "ct747": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 747
+    }
+  },
+  "ct755": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 755
+    }
+  },
+  "ct856": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 856
+    }
+  },
+  "ct769": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 769
+    }
+  },
+  "ct773": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 773
+    }
+  },
+  "ct783": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 783
+    }
+  },
+  "ct784": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 784
+    }
+  },
+  "ct813": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 813
+    }
+  },
+  "ct510": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 510
+    }
+  },
+  "ct837": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 837
+    }
+  },
+  "ct843": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 843
+    }
+  },
+  "ct847": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 847
+    }
+  },
+  "ct854": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 854
+    }
+  },
+  "ct855": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 855
+    }
+  },
+  "ct859": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 859
+    }
+  },
+  "ct870": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 870
+    }
+  },
+  "ct876": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 876
+    }
+  },
+  "ct879": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 879
+    }
+  },
+  "ct882": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 882
+    }
+  },
+  "ct883": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 883
+    }
+  },
+  "ct884": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 884
+    }
+  },
+  "ct894": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 894
+    }
+  },
+  "ct895": {
+    "joinTable": "ct312",
+    "filter": {
+      "c_class_id": 895
+    }
+  }
+}

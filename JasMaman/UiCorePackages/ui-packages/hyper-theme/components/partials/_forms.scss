@@ -1,0 +1,83 @@
+//
+// forms.scss
+//
+
+.form-control {
+    height: calc(30px + 2px);
+    padding: .35rem .9rem;
+    line-height: 1.25;
+}
+
+
+.form-control-sm {
+    height: calc(22px + 2px);
+    border-radius: $rounded-sm;
+    line-height: 0.9;
+}
+
+.form-control-lg {
+    height: calc(38px + 2px);
+    border-radius: $rounded;
+    line-height: 1.4;
+}
+
+
+
+
+// Form-control light
+.form-control-light {
+    background-color: $white !important;
+    border-color: $gray-300 !important;
+}
+
+
+// Form elements (Color and Range)
+input.form-control[type="color"],
+input.form-control[type="range"] {
+    min-height: 32px;
+}
+
+
+// Custom select
+.custom-select.is-invalid, .form-control.is-invalid,.custom-select:invalid, .form-control:invalid,
+.custom-select.is-valid, .form-control.is-valid, .custom-select:valid,.form-control:valid {
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+select.form-control {
+    &:not([size]):not([multiple]) {
+        height: calc(30px + 2px);
+    }
+}
+
+select.form-control-sm {
+&:not([size]):not([multiple]) {
+    height: calc(22px + 2px);
+    padding: .25rem .9rem;
+    padding-right: 1.8rem;
+}
+}
+
+// Show Password
+.password-eye {
+    &:before {
+        font-family: "Material Design Icons";
+        content: "\F06D0";
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        vertical-align: middle;
+        line-height: 1.15;
+        font-size: 13px;
+    }
+}
+
+.show-password {
+    .password-eye {
+        &:before {
+            content: "\F06D1";
+        }
+    }  
+}

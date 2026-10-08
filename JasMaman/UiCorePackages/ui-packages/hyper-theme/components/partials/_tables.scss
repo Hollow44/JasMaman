@@ -1,0 +1,55 @@
+// 
+// tables.scss
+//
+
+.table thead th {
+    font-weight: 600;
+}
+
+//Table centered (Custom)
+.table-centered {
+    th, td {
+        vertical-align: middle !important;
+    }
+}
+
+// .table{
+//     border-color: $primary !important;
+//   }
+// .table > thead > tr > th{
+//     border-color: $MFBorder !important;
+// }
+// .table > tbody > tr > td{
+//     border-color: $MFBorder !important;
+// }
+// .table td, .table th {
+//     border-color: $MFBorder !important;
+// }
+
+
+// Custom table components (Custom)
+.table {
+    .table-user {
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .action-icon {
+        color: $gray-600;
+        font-size: 1.2rem;
+        display: inline-block;
+        padding: 0 3px;
+
+        &:hover {
+            color: $gray-700;
+        }
+    }
+}
+
+// Tables fluid
+.table-nowrap {
+    th, td {
+      white-space: nowrap;
+    }
+}

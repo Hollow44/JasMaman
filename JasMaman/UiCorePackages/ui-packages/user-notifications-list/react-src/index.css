@@ -1,0 +1,9 @@
+﻿@media (max-width: 410px) {
+    b {
+        text-overflow: ellipsis;
+        width: 50vw;
+        white-space: nowrap !important;
+        display: block;
+        overflow: hidden;
+    }
+}

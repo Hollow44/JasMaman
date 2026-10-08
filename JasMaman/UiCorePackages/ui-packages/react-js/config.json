@@ -1,0 +1,6 @@
+﻿{
+  "require":[],
+  "requireInternal": {
+    "react-dom.production.min.js": ["react.production.min.js"]
+  }
+}

@@ -1,0 +1,56 @@
+﻿
+.yoda-viewable-image {
+    cursor: zoom-in;
+}
+
+#yoda-image-viewer-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    padding: 0px 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    transition: .3s;
+}
+
+#yoda-image-viewer-modal-close {
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+#yoda-image-viewer-modal-left {
+    z-index: 1;
+    cursor: pointer;
+    position: fixed;
+    top: 9px;
+    right: 105px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+#yoda-image-viewer-modal-right {
+    z-index: 1;
+    cursor: pointer;
+    position: fixed;
+    top: 9px;
+    right: 60px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+#yoda-image-viewer-modal-item {
+    border-radius: 5px;
+    cursor: move;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}

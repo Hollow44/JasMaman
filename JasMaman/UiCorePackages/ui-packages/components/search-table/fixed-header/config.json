@@ -1,0 +1,1 @@
+﻿{ Require: ["jquery.core", "components.search-table.col-resizer", "jquery.scrollbar"] }

@@ -1,0 +1,159 @@
+﻿@using UsersResources;
+@using Yoda.Application.Helpers
+@using Yoda.Interfaces
+@using Yoda.Application.Models
+@using Yoda.Localization;
+@using YodaApp.Yoda.Application.Notifications;
+@model Yoda.Application.Models.YodaRenderData
+@inject INotificationsApiClientFactory notificationsApiClientFactory;
+
+@{
+    var menuBlockModel = new MenuInfo
+    {
+        Menu = Model.Menu,
+        CurrentModuleName = Model.Module,
+        CurrentMenuName = Model.Method,
+        RequestContext = Model.RequestContext,
+        CurMenuItem = Model.Breadcrumb.MenuItem
+    };
+    string T(LocalizableText text)
+    {
+        var langTranslator = Model.RequestContext.LangTranslator;
+        return langTranslator.Translate(text, Model.CurrentLanguage, "view");
+    }
+}
+
+@{
+    await Html.RenderPartialAsync("MobileNavbar", menuBlockModel);
+}
+
+<!-- Mobile Menu Start -->
+
+<div class="mobile-navbar-menu" id="mobile-navbar-menu">
+    <div class="mobile-navbar-menu-container">
+
+
+        <div class="mobile-navbar-menu-header text-white">
+            <!--HEADER CONTAINER-->
+            <div class="">
+            <!-- Cabinet type indication -->
+            @if (Model.RequestContext.User.IsAuthentificated)
+            {
+                <div class="px-1 d-block">
+                    <div class="bg-dark text-light px-2 rounded-5 rounded mt-1 d-block d-md-inline-block font-10 text-center font-weight-bold">@Model.ProjectText</div>
+                </div>
+            }
+
+            <div class="p-3 d-flex align-items-center justify-content-between">
+                <!--logo-->
+                <span class="topnav-logo-lg-img logo-template-dark"></span>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle p-0" type="button" id="dropdownLangBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="align-middle d-sm-inline-block">@Model.SupportedLanguages.FirstOrDefault(x => x.Lang == Model.CurrentLanguage)?.Text</span>
+                    </button>
+                    <div class="dropdown-menu mt-1" aria-labelledby="dropdownLangBtn" style="min-width: 64px !important;">
+                        @foreach (var language in Model.SupportedLanguages)
+                        {
+                            if (language.Lang.EqualsIgnoreCase(Model.CurrentLanguage))
+                            {
+                                continue;
+                            }
+                            <a href="@LanguagesChangeHelpers.GetChangeLanguageUrl((HtmlHelper)Html, Model.Module, Model.Method, language.Lang)" class="dropdown-item notify-item px-0 text-center">
+                                <span class="align-middle">@language.Text</span>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+                <!--USER BLOCK-->
+                @{
+                    if (Model.RequestContext.User.IsAuthentificated)
+                    {
+                        var bin = Model.RequestContext.User.GetUserBin(Model.RequestContext.QueryExecuter);
+                        var fio = Model.RequestContext.User.GetUserShortName(Model.RequestContext.QueryExecuter);
+                        var signOutUrl = Url.YodaAction("UsersCommonFuncModule", "LogOut");
+                        var projectsOverviewUrl = Model.RequestContext.Configuration["projectsOverviewUrl"];
+                        var notificationsUrl = Model.RequestContext.Configuration["notificationsUrl"];
+
+                        var notificationsApiClient = await notificationsApiClientFactory.CreateClient();
+                        var unreadNotificationsCount = await notificationsApiClient.GetUnReadCountAsync(Model.RequestContext.User.Name);
+
+                        <div class="d-flex align-items-center justify-content-between mx-2 p-2 bg-white card-shadow rounded-10">
+                            <a class="text-dark d-flex align-items-center" href="#">
+                                <div class="account-user-avatar">
+                                    <span class="rounded-circle avatar-default"></span>
+                                </div>
+                                <div class="ml-1 lh-1">
+                                    <span class="font-weight-semibold">@fio</span><br />
+                                    <span class="font-12">@bin</span>
+                                </div>
+                            </a>
+                            <div class="mobile-navbar-user-actions d-flex align-items-center flex-nowrap">
+                                <!--<a class="d-flex align-items-center mr-3" href"#"><i class="yodic yodic-wallet-outline font-24 text-secondary"></i></a>-->
+                                <a class="d-flex align-items-center mr-2" href"#">
+                                    <i class="yodic yodic-notifi font-24 text-secondary"></i>
+                                    <span id="notification-bell-badge" class="badge badge-danger notification-bell-badge">@unreadNotificationsCount</span>
+                                </a>
+                                <a class="d-flex align-items-center" href="@signOutUrl"><i class="yodic yodic-logout font-24 text-secondary"></i></a>
+                            </div>
+
+                            <!--<a class="" href="@Url.YodaAction("UsersCommonFuncModule", "Challenge")" aria-haspopup="false" aria-expanded="false">
+                                <span class="align-middled-sm-inline-block btn btn-outline-secondary">Войти</span>
+                            </a>-->
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center justify-content-between px-3">
+                            <a class="nav-link mr-0 pl-1" href="@Url.YodaAction("UsersCommonFuncModule", "Challenge")" aria-haspopup="false" aria-expanded="false">
+                                <span class="align-middled-sm-inline-block btn btn-outline-secondary">Войти</span>
+                            </a>
+                        </div>
+                    }
+                }
+                <!--END USER BLOCK-->
+            </div>
+           
+            <!--END HEADER CONTAINER-->
+            <div class="navbar-light mobile-navbar-menu-links mt-2">
+                <!--load menu-->
+                @{
+                    await Html.RenderPartialAsync("MenuSidebarBlock", menuBlockModel);
+                }
+            </div>
+
+
+        </div>
+
+
+
+        <!--Telegram group-->
+
+        <div class="mx-2 pl-2 py-2">
+
+            <div class="text-left my-2 mt-1">
+                <div class="">
+                    <a class="text-muted font-12" href="#" target="_blank">@T("Пользовательcкое соглашение")</a><br>
+                    <a class="text-muted font-12" href="#" target="_blank">@T("Политика конфиденциальности")</a>
+                </div>
+            </div>
+
+            <!--Mobile apps-->
+            <div class="">
+                <a href="" class="mobile-store-logo mobile-store-playmarket mr-1"></a>
+                <a href="" class="mobile-store-logo mobile-store-appstore mr-1"></a>
+                <a href="" class="telegram-icon telegram-btn"></a>
+            </div>
+            <div class="text-left font-12 mt-2 text-muted text-uppercase">
+               <script>document.write(new Date().getFullYear())</script> © 
+                <script>
+                    var hostSplit = location.host.split("."); 
+                    document.write(([hostSplit[hostSplit.length - 2], hostSplit[hostSplit.length - 1]].join('.')).toUpperCase())
+                </script>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- end Mobile Menu -->

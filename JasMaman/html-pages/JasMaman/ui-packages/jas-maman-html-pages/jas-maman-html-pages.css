@@ -1,0 +1,14 @@
+.img-main {
+    background-color: #394859;
+    background-image: url('images/img-main.jpg');
+    background-image: linear-gradient( 90deg, #2a333200 30%, #5a0aad54 70%), url(images/img-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 770px) {
+    .img-main {
+        background-image: linear-gradient( 90deg, #2a333200 0%, #5a0aad54 50%), url(images/img-main.jpg);
+    }
+}

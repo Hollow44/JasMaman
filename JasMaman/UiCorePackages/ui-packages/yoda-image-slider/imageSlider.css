@@ -1,0 +1,14 @@
+
+.yoda-image-slider-main {
+    width: auto;
+    max-height: 280px;
+}
+
+.yoda-image-slider-item {
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.yoda-image-slider-button {
+    height: 30px;
+}

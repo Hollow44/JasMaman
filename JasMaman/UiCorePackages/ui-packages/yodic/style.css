@@ -1,0 +1,318 @@
+@font-face {
+  font-family: 'yodic';
+  src:  url('fonts/yodic.eot?bq9fwa');
+  src:  url('fonts/yodic.eot?bq9fwa#iefix') format('embedded-opentype'),
+    url('fonts/yodic.ttf?bq9fwa') format('truetype'),
+    url('fonts/yodic.woff?bq9fwa') format('woff'),
+    url('fonts/yodic.svg?bq9fwa#yodic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.yodic {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'yodic' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.yodic-logout:before {
+  content: "\e95d";
+}
+.yodic-numeric-square-0:before {
+  content: "\e95e";
+}
+.yodic-wallet:before {
+  content: "\e95f";
+}
+.yodic-wallet-outline:before {
+  content: "\e960";
+}
+.yodic-bars-menu:before {
+  content: "\e95b";
+}
+.yodic-home:before {
+  content: "\e95c";
+}
+.yodic-map-full:before {
+  content: "\e958";
+}
+.yodic-map-minus:before {
+  content: "\e959";
+}
+.yodic-map-plus:before {
+  content: "\e95a";
+}
+.yodic-info-solid:before {
+  content: "\e91d";
+}
+.yodic-calendar:before {
+  content: "\e957";
+}
+.yodic-bag:before {
+  content: "\e94f";
+}
+.yodic-build:before {
+  content: "\e950";
+}
+.yodic-car:before {
+  content: "\e951";
+}
+.yodic-location:before {
+  content: "\e952";
+}
+.yodic-resources:before {
+  content: "\e953";
+}
+.yodic-square-services:before {
+  content: "\e954";
+}
+.yodic-time-1:before {
+  content: "\e955";
+}
+.yodic-truck:before {
+  content: "\e956";
+}
+.yodic-yoda:before {
+  content: "\e94e";
+}
+.yodic-map-point:before {
+  content: "\e91f";
+}
+.yodic-qoldau:before {
+  content: "\e94c";
+}
+.yodic-tractor:before {
+  content: "\e94d";
+}
+.yodic-e-qazyna:before {
+  content: "\e912";
+}
+.yodic-arrow-down:before {
+  content: "\e900";
+}
+.yodic-arrow-up:before {
+  content: "\e901";
+}
+.yodic-activity:before {
+  content: "\e902";
+}
+.yodic-agreement:before {
+  content: "\e903";
+}
+.yodic-agribonds:before {
+  content: "\e904";
+}
+.yodic-airplane:before {
+  content: "\e905";
+}
+.yodic-arrow-left-medium:before {
+  content: "\e906";
+}
+.yodic-arrow-left-right:before {
+  content: "\e907";
+}
+.yodic-arrow-right-medium:before {
+  content: "\e908";
+}
+.yodic-cabinet:before {
+  content: "\e909";
+}
+.yodic-camera:before {
+  content: "\e90a";
+}
+.yodic-check-outline:before {
+  content: "\e90b";
+}
+.yodic-check-solid:before {
+  content: "\e90c";
+}
+.yodic-cross-outline:before {
+  content: "\e90d";
+}
+.yodic-cross-solid:before {
+  content: "\e90e";
+}
+.yodic-dfo:before {
+  content: "\e90f";
+}
+.yodic-doc:before {
+  content: "\e910";
+}
+.yodic-down-corner:before {
+  content: "\e911";
+}
+.yodic-eye:before {
+  content: "\e913";
+}
+.yodic-fat-user:before {
+  content: "\e914";
+}
+.yodic-fields-earth:before {
+  content: "\e915";
+}
+.yodic-grain:before {
+  content: "\e916";
+}
+.yodic-grain-operation:before {
+  content: "\e917";
+}
+.yodic-grain-receipt:before {
+  content: "\e918";
+}
+.yodic-grain-receipt-logo:before {
+  content: "\e919";
+}
+.yodic-heart:before {
+  content: "\e91a";
+}
+.yodic-humidity:before {
+  content: "\e91b";
+}
+.yodic-info:before {
+  content: "\e91c";
+}
+.yodic-kezekte:before {
+  content: "\e91e";
+}
+.yodic-lock:before {
+  content: "\e920";
+}
+.yodic-mortgagee:before {
+  content: "\e921";
+}
+.yodic-ndvi:before {
+  content: "\e922";
+}
+.yodic-notifi:before {
+  content: "\e923";
+}
+.yodic-numeric-square-1:before {
+  content: "\e924";
+}
+.yodic-numeric-square-2:before {
+  content: "\e925";
+}
+.yodic-numeric-square-3:before {
+  content: "\e926";
+}
+.yodic-numeric-square-4:before {
+  content: "\e927";
+}
+.yodic-numeric-square-5:before {
+  content: "\e928";
+}
+.yodic-numeric-square-6:before {
+  content: "\e929";
+}
+.yodic-numeric-square-7:before {
+  content: "\e92a";
+}
+.yodic-numeric-square-8:before {
+  content: "\e92b";
+}
+.yodic-numeric-square-9:before {
+  content: "\e92c";
+}
+.yodic-numeric-square-10:before {
+  content: "\e92d";
+}
+.yodic-numeric-square-11:before {
+  content: "\e92e";
+}
+.yodic-numeric-square-12:before {
+  content: "\e92f";
+}
+.yodic-numeric-square-13:before {
+  content: "\e930";
+}
+.yodic-numeric-square-14:before {
+  content: "\e931";
+}
+.yodic-numeric-square-15:before {
+  content: "\e932";
+}
+.yodic-numeric-square-16:before {
+  content: "\e933";
+}
+.yodic-numeric-square-17:before {
+  content: "\e934";
+}
+.yodic-numeric-square-18:before {
+  content: "\e935";
+}
+.yodic-numeric-square-19:before {
+  content: "\e936";
+}
+.yodic-numeric-square-20:before {
+  content: "\e937";
+}
+.yodic-organization:before {
+  content: "\e938";
+}
+.yodic-plus:before {
+  content: "\e939";
+}
+.yodic-right-corner:before {
+  content: "\e93a";
+}
+.yodic-search:before {
+  content: "\e93b";
+}
+.yodic-services:before {
+  content: "\e93c";
+}
+.yodic-share:before {
+  content: "\e93d";
+}
+.yodic-star:before {
+  content: "\e93e";
+}
+.yodic-stat:before {
+  content: "\e93f";
+}
+.yodic-storage:before {
+  content: "\e940";
+}
+.yodic-technics:before {
+  content: "\e941";
+}
+.yodic-temp:before {
+  content: "\e942";
+}
+.yodic-time:before {
+  content: "\e943";
+}
+.yodic-trades-all:before {
+  content: "\e944";
+}
+.yodic-trades-my:before {
+  content: "\e945";
+}
+.yodic-trades-room:before {
+  content: "\e946";
+}
+.yodic-user:before {
+  content: "\e947";
+}
+.yodic-user-cabinet-square:before {
+  content: "\e948";
+}
+.yodic-users:before {
+  content: "\e949";
+}
+.yodic-weather:before {
+  content: "\e94a";
+}
+.yodic-week:before {
+  content: "\e94b";
+}

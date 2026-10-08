@@ -1,0 +1,17 @@
+{
+  "name": "my-package",
+  "version": "1.0.0",
+  "babel": {
+    "presets": [
+      "env", "react"
+    ],
+    "env": {
+        "production": {
+          "plugins": []
+        }
+    }
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1"
+  }
+}

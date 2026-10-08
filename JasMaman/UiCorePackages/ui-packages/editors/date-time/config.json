@@ -1,0 +1,8 @@
+﻿{
+	require:["editors.date"],
+	requireInternal: {
+		"jquery.ui.datetime.src.js": ["jquery-ui-timepicker-addon.js"],
+		"timepicker-regional-config.js": ["jquery-ui-timepicker-addon.js"],
+		"jquery.ui.datetime.css":["jquery.ui.datetime-custom.css"]
+	}
+}

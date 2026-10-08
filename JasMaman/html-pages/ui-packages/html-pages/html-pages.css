@@ -1,0 +1,75 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.html-page-content {
+    padding-top: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.devmod-page {
+    height: 500px;
+}
+
+.img-devpage {
+    background-image: url(images/devmod.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}
+
+.inf-logo {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+}
+
+
+/******ICONS*******/
+.card-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    height: 75px;
+}
+
+.icon-meeting {
+    background-image: url("images/icon-meeting.svg");
+}
+
+.icon-monitoring {
+    background-image: url("images/icon-monitoring.svg");
+}
+
+.icon-notification {
+    background-image: url("images/icon-notification.svg");
+}
+
+.icon-online {
+    background-image: url("images/icon-online.svg");
+}
+
+.icon-protocol {
+    background-image: url("images/icon-protocol.svg");
+}
+
+.icon-registration {
+    background-image: url("images/icon-registration.svg");
+}
+
+.icon-tracking {
+    background-image: url("images/icon-tracking.svg");
+}
+
+.icon-utility-services {
+    background-image: url("images/icon-utility-services.svg");
+}
+
+.icon-document {
+    background-image: url("images/icon-document.svg");
+}

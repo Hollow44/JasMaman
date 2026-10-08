@@ -1,0 +1,163 @@
+﻿.reg-page-bg {
+    background-image: url(./images/reg-page-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.avatar-default {
+    background-image: url(images/avatar-default.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 26px;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+
+/***** APP STORE **********************************/
+
+.mobile-store-logo {
+    display: inline-block;
+    width: 145px;
+    height: 52px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+
+.mobile-store-appstore {
+    background-image: url(images/app-store.svg);
+}
+
+.mobile-store-playmarket {
+    background-image: url(images/play-market.svg);
+}
+
+.telegram-icon {
+    background-image: url(images/telegram-icon.svg);
+}
+
+/***** QR **********************************/
+
+.qr-project-img-template {
+    background-image: url(images/qr-template.jpg);
+}
+
+.qr-project {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 130px;
+    height: 130px;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.qr-footer-card {
+    width: 160px;
+}
+
+.qr-project-footer {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 6px;
+    width: 150px;
+    height: 150px;
+}
+
+
+/***** LOGO **********************************/
+
+.menu-logo-container {
+    height: 70px;
+    background-color: rgb(255 255 255 / 10%);
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-logo {
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width:320px;
+}
+
+.menu-logo-sm {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 35px;
+    width: 70px;
+    height: 70px;
+}
+
+
+.topnav-logo-lg-img {
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    display: block;
+    height: 40px;
+    width: 200px;
+}
+
+.topnav-logo-sm-img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 40px;
+    height:70px;
+}
+
+
+.footer-logo-lg-img {
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    display: block;
+    height: 40px;
+}
+
+
+/***** LOGO PROJECTS PATH **********************************/
+
+.logo-template-light {
+    background-image: url(logo/template-light.svg);
+}
+
+.logo-template-light-sm {
+    background-image: url(logo/template-light-sm.svg);
+}
+
+.logo-template-light-text:before {
+    content: 'DEMO.PROJECT';
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--white);
+}
+
+.logo-template-dark {
+    background-image: url(logo/template-dark.svg);
+}
+
+.logo-template-dark-sm {
+    background-image: url(logo/template-dark-sm.svg);
+}
+
+.logo-template-dark-text:before {
+    content: 'DEMO.PROJECT';
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--dark);
+}
+
+
+/***** END LOGO PROJECTS PATH **********************************/

@@ -1,0 +1,44 @@
+﻿body {
+}
+
+.reg-card-logo {
+    background-position: 15px;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 110px;
+    width: 180px;
+    height: 80px;
+}
+
+.reg-card-title {
+    font-weight: 600;
+    padding-top: 1.3rem;
+    color: #505762;
+    font-size: 1.125rem;
+}
+
+.reg-card-container {
+    border-radius: 14px !important;
+    -webkit-box-shadow: 5px 5px 25px 0 rgba(154,161,171,0.3);
+    box-shadow: 5px 5px 25px 0 rgba(154,161,171,0.3);
+}
+
+.reg-card-container .card {
+    border: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 12px;
+}
+
+.reg-card-container .card-body {
+    padding-top: 0;
+}
+
+.reg-footer {
+   
+}
+
+    .reg-footer span {
+        color: #fff !important;
+        text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+    }

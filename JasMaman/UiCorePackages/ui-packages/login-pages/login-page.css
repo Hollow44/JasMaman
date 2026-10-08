@@ -1,0 +1,88 @@
+.login-user-types-tab {
+    max-width: 650px;
+    z-index: 1000;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    background-color: #f3f3f3;
+    border: 0.5px solid #eaeaea;
+}
+
+.login-user-types-tab td {
+    width: 25%;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    border-bottom: 3px solid #E6E6E6;
+    border-radius: 2px;
+}
+
+.login-user-types-tab td:hover {
+ 
+    background-color: #e3e6ec;
+    border-radius: 2px;
+}
+
+.login-user-types-tab a {
+ color:#464646;
+ text-decoration: none;
+}
+
+.login-type-td.login-type-active {
+     border-bottom: 3px solid #2d6af1;
+     background-color: #e3e6ec;
+     border-radius: 2px;
+}
+
+.login-type-td.login-type-active a {
+    color: #000;
+    text-decoration: none;
+}
+
+.login-type-td.login-type-active * {
+    color: #000;
+    text-decoration: none;
+}
+
+.login-type-compact-text {
+    display: none;
+}
+
+@media(max-width:700px) {
+    .login-type-compact-text {
+        display: inline;
+    }
+    .login-type-normal-text {
+        display: none;
+    }
+}
+
+.user-reg-form-steps-container {
+    margin-bottom: 20px;
+}
+.reg-form-step-item {
+    font-size: 20px;
+    color: gray;
+}
+
+.reg-form-step-item.activated {
+    color: green;
+}
+
+.reg-form-step-item.executed {
+    color:black;
+}
+.step-separator {
+    font-size: 20px;
+}
+
+.user-reg-move-to-prev {
+    margin-right: 5px;
+}
+.reg-email-confirm-code-sended-message{
+    display: block;
+    color: gray;
+}
+#btnRegistrationCancel {
+    float: right;
+}

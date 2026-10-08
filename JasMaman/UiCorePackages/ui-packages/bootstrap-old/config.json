@@ -1,0 +1,10 @@
+{
+	require: ["jquery.core"],
+	requireInternal: {
+		"js/bootstrap-theme.min.css": ["js/bootstrap.min.css"]
+	},
+	loadOnly: {
+		js: ["js/bootstrap.min.js"],
+		css: ["css/bootstrap.min.css", "css/bootstrap-theme.min.css"]
+	}
+}

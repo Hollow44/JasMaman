@@ -1,0 +1,35 @@
+﻿.search-query-input-toolbar {
+    margin-bottom: 10px;
+}
+
+.search-collection-result-empty, .searching-in-process {
+    font-style: italic;
+    text-align: center;
+}
+
+.search-collection-item {
+    cursor: pointer;
+}
+.search-collection-item:hover {
+    background: #eff4ff;
+}
+
+
+
+.multi-search-collection-editor-v2 {
+    border: 1px solid #b9b9b9;
+    padding: 5px;
+}
+
+.empty-item {
+    /* font-style: italic; */
+    color: gray;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.d-flex {
+    display: flex;
+}

@@ -1,0 +1,43 @@
+﻿.app-content {
+    font-size: 14px !important;
+    font-family: sans-serif !important;
+}
+.app-content p {
+    /* */
+    padding-top: 0.5em !important;
+}
+.app-section-item {
+    text-indent: 2em !important;
+}
+.sd-add-indend-l1 {
+    text-indent: 4em !important;
+}
+.sd-add-indend-l2 {
+    text-indent: 6em !important;
+}
+.application-term-title {
+    margin: 0 0 0.1em 2em;
+}
+.application-term {
+    margin: 0 0 0.1em 2em;
+    text-indent: 2em;
+}
+
+.csp-title {
+    font-weight: bold;
+    margin: 1em 0 0.1em 2em;
+}
+.csp-sub-title {
+    font-weight: bold;
+    margin: 1em 0 0.1em 2em;
+}
+.csp-value {
+    font-weight: normal;
+    text-indent: 2em;
+    margin: 0 0 0 2em;
+}
+.sd-conditions-container {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 6px;
+}

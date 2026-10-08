@@ -1,0 +1,47 @@
+﻿@using Yoda.Interfaces.Block;
+@using Yoda.Interfaces
+
+@model Yoda.Application.Models.BlockRenderData
+
+
+
+@foreach (var blockItem in Model.BlockItems.Select(x=>x.NativeBlockItem)) {
+    bool printTitle = !string.IsNullOrEmpty(blockItem.BlockTitle) && (ViewData["print-header"] == null || (bool) ViewData["print-header"]);
+
+    if (!blockItem.PrintTitle) {
+        printTitle = false;
+    }
+
+    bool printBlockDiv = ViewData["print-wrapper"] == null || (bool)ViewData["print-wrapper"];
+    
+    if(!blockItem.ShowBorder) {
+        printBlockDiv = false;
+    }
+    
+    if (printTitle) {
+        <text>
+        <div class="block-container">
+        <div class="block-title-margin">
+            
+        </div>
+        <div class="block-title">
+                @blockItem.BlockTitle
+        </div>
+        <div class="clear"></div>
+        </text>
+    }
+    if (printBlockDiv) {
+        @:<div class="block">
+    }
+    if (blockItem is IFormAction) {
+        Html.RenderPartial(blockItem.ViewName, ((IFormAction)blockItem).GetForm(Model.RequestContext));
+    } else {
+        Html.RenderPartial(blockItem.ViewName, blockItem.GetViewData(Model.RequestContext));
+    }
+    if (printBlockDiv) {
+        @:</div>
+    }
+    if (printTitle) {
+        @:</div>
+    }
+}

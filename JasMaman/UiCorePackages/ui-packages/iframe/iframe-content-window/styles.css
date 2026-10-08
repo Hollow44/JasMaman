@@ -1,0 +1,4 @@
+﻿/*undo hyper thing*/
+body[data-leftbar-compact-mode="condensed"] {
+    min-height: auto;
+}

@@ -1,0 +1,16 @@
+﻿@using Yoda.Interfaces;
+@model Yoda.Application.Models.LocalTaskAreaElements;
+
+
+@{
+    if(Model==null){
+        return;
+    }
+    if (!Model.Empty && Model.ExtraElements.Elements.Count() > 0) {
+        var customElements = Model.ExtraElements.Elements.GetUserAccessableItems(Model.User).OrderBy(x=>x.Weight);
+        foreach (var extraElement in customElements) {
+            extraElement.CssClass = $"btn btn-primary btn-sm mr-1 mb-1 {extraElement.CssClass}";
+            <text>@extraElement.ToHtmlString(Html)</text>
+        }
+    }
+}

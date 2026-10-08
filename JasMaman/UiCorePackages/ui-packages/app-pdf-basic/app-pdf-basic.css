@@ -1,0 +1,159 @@
+﻿.app-content-wrapper {
+    max-width: 1000px;
+    border: 1px solid lightgray;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.app-content {
+    font-size: 14px;
+    font-family: 'times';
+}
+
+.head-right {
+    text-align: right;
+    font-size: 14px;
+}
+
+.app-content .title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+}
+
+.app-content .app-intro {
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.app-content .app-section-title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.app-content .app-section-item {
+    margin-bottom: 0;
+    text-align: justify;
+    
+}
+
+table.app-system-info {
+    padding: 5px;
+}
+
+.app-system-info-col1 {
+    vertical-align: top;
+    width: 450px;
+    padding: 0;
+}
+
+.app-system-info-col2 {
+    border-left: 1px solid #7d7d7d;
+    text-align: right;
+    vertical-align: top;
+    padding: 0;
+}
+
+
+.sign-content {
+    min-height: 200px;
+    border: 1px solid #4b4b4b;
+    padding: 10px;
+    font-size: 12px;
+    page-break-inside: avoid !important
+}
+
+
+.app-content p {
+    text-indent: 30px;
+    margin: 0;
+}
+
+.app-content ul {
+    list-style: none;
+    text-indent: 20px;
+}
+
+.app-system-info {
+    border-bottom: 2px solid #4b4b4b;
+    background-color: #dcdcdc;
+    padding: 10px;
+    
+    padding: 10px;
+}
+
+.app-system-info .label {
+    font-weight: bold;
+}
+
+
+.app-content .text-underline {
+    text-decoration: underline;
+}
+
+.app-content .text-stroke {
+    text-decoration: line-through;
+}
+
+.app-content {
+}
+
+.text-italic {
+    font-style: italic;
+}
+.app-content .text-align-right {
+    text-align: right;
+}
+
+.app-content .text-small {
+    font-size: 12px;
+}
+
+.app-content {
+    font-size: 14px;
+}
+
+.nobreak {
+    page-break-inside: avoid !important;
+}
+
+.new-page {
+    page-break-before: always;
+}
+
+.document-check-hint {
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.bordered-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.bordered-table td {
+    border-spacing: 0;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.unbordered-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.unbordered-table td {
+    border-spacing: 0;
+    border: 0;
+    padding: 5px;
+    text-align: left;
+}
+.app-schema-img {
+    border: 1px solid gray;
+    width: 96%;
+}
